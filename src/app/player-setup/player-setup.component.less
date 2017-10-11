@@ -1,0 +1,41 @@
+@import '../../../semantic/src/themes/default/globals/site.variables';
+
+
+.players-container {
+  .player {
+    vertical-align: middle;
+    border-radius: 50%;
+    border: 1px solid #4D7198;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .page-title {
+    padding-top: 15vh;
+  }
+
+  .players-container {
+    position: absolute;
+    top: 45vh;
+    width: 100%;
+
+    .player {
+      width: 12vw;
+      height: 12vw;
+    }
+  }
+}
+
+@media only screen and (max-width: @tabletBreakpoint) {
+  .page-title {
+    padding: 3rem 0;
+  }
+
+  .players-container {
+    .player {
+      width: 50vw;
+      height: 50vw;
+    }
+  }
+}

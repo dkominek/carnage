@@ -21,7 +21,7 @@
 /* Text */
 @textTransform: none;
 @tapColor: transparent;
-@fontFamily: @pageFont;
+@fontFamily: @headerFont;
 @fontWeight: bold;
 @textColor: rgba(0, 0, 0, 0.6);
 @textShadow: none;

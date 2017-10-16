@@ -10,33 +10,32 @@
             <div class="fourteen wide column">
                 <div class="ui five column stackable grid">
                     <div class="column center aligned">
-                        <div class="player">
-                            name
+                        <div class="player one" [ngClass]="{'empty': false}">
+                            <span class="name">Na</span>
                         </div>
                     </div>
                     <div class="column center aligned">
-                        <div class="player">
-                            name
+                        <div class="player two" [ngClass]="{'empty': true}">
                         </div>
                     </div>
                     <div class="column center aligned">
-                        <div class="player">
-                            name
+                        <div class="player three" [ngClass]="{'empty': true}">
                         </div>
                     </div>
                     <div class="column center aligned">
-                        <div class="player">
-                            name
+                        <div class="player four" [ngClass]="{'empty': true}">
                         </div>
                     </div>
                     <div class="column center aligned">
-                        <div class="player">
-                            name
+                        <div class="player five" [ngClass]="{'empty': true}">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="one wide column"></div>
         </div>
+    </div>
+    <div class="primary action">
+        <button class="ui button massive" [disabled]="false">Ready</button>
     </div>
 </div>

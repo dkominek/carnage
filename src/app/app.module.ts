@@ -6,11 +6,14 @@ import { RoutingModule } from './routing/routing.module';
 
 import { AppComponent } from './app.component';
 import { PlayerSetupComponent } from './player-setup/player-setup.component';
+import { CharacterPageComponent } from './character-page/character-page.component';
+import { CharacterService } from './character.service';
 
 @NgModule({
   declarations: [
       AppComponent,
-      PlayerSetupComponent
+      PlayerSetupComponent,
+      CharacterPageComponent
   ],
   imports: [
       BrowserModule,
@@ -18,7 +21,7 @@ import { PlayerSetupComponent } from './player-setup/player-setup.component';
       HttpModule,
       RoutingModule
   ],
-  providers: [],
+  providers: [CharacterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

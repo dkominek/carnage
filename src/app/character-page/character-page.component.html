@@ -1,0 +1,19 @@
+<div class="ui grid container">
+    <div class="sixteen wide column" id="page-title">
+        <h1 class="ui header">
+            Character Browsing
+        </h1>
+    </div>
+    <div class="eight wide column">
+        <div class="attribute">
+            <label class="ui label">Name:</label> {{character?.name}}
+        </div>
+        <div class="attribute">
+            <label class="ui label">Type:</label> {{character?.type}}
+        </div>
+
+    </div>
+    <div class="eight wide column">
+        <img src="/assets/characters/{{character?.name.toLowerCase()}}.svg" />
+    </div>
+</div>

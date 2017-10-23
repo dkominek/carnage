@@ -3,14 +3,32 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class CharacterService {
     readonly characters: Character[] = [
-        new Entree('Hermberg', 'This hamberger has some zest. Wouldn\'t want to meet him in a dark ally', 10, 15, 24, 85)
+        new Entree(
+            'Hermberg',
+            CharacterSubtype.CARNIVORE, 10.99,
+            'This hamburger has some zest. Wouldn\'t want to meet him in a dark ally',
+            10, 15, 24, 85)
     ];
+}
+
+export class CharacterType {
+    static readonly APPETIZER = 'Appetizer';
+    static readonly DRINK = 'Drink';
+    static readonly ENTREE = 'Entrée';
+    static readonly DESSERT = 'Dessert';
+}
+
+export class CharacterSubtype {
+    static readonly CARNIVORE = 'Carnivore';
+    static readonly HERBIVORE = 'Herbivore';
 }
 
 export abstract class Character {
 
     public constructor(
         public name: string,
+        public subtype: string,
+        public price: number,
         public story: string,
         public attributeOne: number,
         public attributeTwo: number,
@@ -31,7 +49,7 @@ export abstract class Character {
 
 export class Appetizer extends Character {
     get type(): string {
-        return 'appetizer';
+        return CharacterType.APPETIZER;
     }
 
     get descriptorOne(): string {
@@ -53,7 +71,7 @@ export class Appetizer extends Character {
 
 export class Drink extends Character {
     get type(): string {
-        return 'drink';
+        return CharacterType.DRINK;
     }
 
     get descriptorOne(): string {
@@ -75,7 +93,7 @@ export class Drink extends Character {
 
 export class Entree extends Character {
     get type(): string {
-        return 'entree';
+        return CharacterType.ENTREE;
     }
 
     get descriptorOne(): string {
@@ -97,7 +115,7 @@ export class Entree extends Character {
 
 export class Dessert extends Character {
     get type(): string {
-        return 'dessert';
+        return CharacterType.DESSERT;
     }
 
     get descriptorOne(): string {

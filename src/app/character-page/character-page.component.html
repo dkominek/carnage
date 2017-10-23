@@ -1,15 +1,76 @@
-<div class="ui grid container">
-    <div class="sixteen wide column" id="page-title">
-        <h1 class="ui header">
-            Character Browsing
-        </h1>
-    </div>
+<div class="ui grid container" id="character-view">
     <div class="eight wide column">
-        <div class="attribute">
-            <label class="ui label">Name:</label> {{character?.name}}
+        <div class="ui items" id="name-type">
+            <div class="item">
+                <div class="image">
+                    <img [attr.src]="'/assets/icons/' + character.type.toLowerCase() + '-' + character.subtype.toLowerCase() + '.svg'"/>
+                </div>
+                <div class="content">
+                    <span class="header">{{character?.name}}</span>
+                    <div class="meta">
+                        <span>{{character.type}} / {{character.subtype}}</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="attribute">
-            <label class="ui label">Type:</label> {{character?.type}}
+        <div class="ui items" id="story">
+            <div class="item">
+                <div class="content">
+                    <span class="header">Story/Description</span>
+                    <div class="description">
+                        <p>{{character.story.slice(0, 100)}}</p>
+                    </div>
+                    <div *ngIf="character.story.length > 200" class="extra" (click)="storyExpanded = !storyExpanded">
+                        Show {{storyExpanded ? 'more' : 'less'}}...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui items" id="attributes">
+            <div class="item">
+                <div class="content">
+                    <span class="header">{{character.descriptorOne}}</span>
+                    <div class="description">
+                        <div class="ui indicating progress">
+                            <div class="bar" [ngStyle]="{ 'width.%': character.attributeOne }"></div>
+                            <div class="label">{{character.attributeOne}} / 100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <span class="header">{{character.descriptorTwo}}</span>
+                    <div class="description">
+                        <div class="ui indicating progress">
+                            <div class="bar" [ngStyle]="{ 'width.%': character.attributeTwo }"></div>
+                            <div class="label">{{character.attributeTwo}} / 100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <span class="header">{{character.descriptorThree}}</span>
+                    <div class="description">
+                        <div class="ui indicating progress">
+                            <div class="bar" [ngStyle]="{ 'width.%': character.attributeThree }"></div>
+                            <div class="label">{{character.attributeThree}} / 100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <span class="header">{{character.descriptorFour}}</span>
+                    <div class="description">
+                        <div class="ui indicating progress">
+                            <div class="bar" [ngStyle]="{ 'width.%': character.attributeFour }"></div>
+                            <div class="label">{{character.attributeFour}} / 100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>

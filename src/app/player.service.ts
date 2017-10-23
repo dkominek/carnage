@@ -10,6 +10,8 @@ export class PlayerService {
     playerFour: Player;
     playerFive: Player;
 
+    private _activePlayer = 0;
+
     constructor() {
     }
 
@@ -71,8 +73,57 @@ export class PlayerService {
         }
     }
 
-    getShortName(player: Player) {
-        return player.name.slice(0, 2);
+    getActivePlayer(): Player|null {
+        switch (this._activePlayer) {
+            case 1:
+                return this.playerOne;
+            case 2:
+                return this.playerTwo;
+            case 3:
+                return this.playerThree;
+            case 4:
+                return this.playerFour;
+            case 5:
+                return this.playerFive;
+            default:
+                return null;
+        }
+    }
+
+    setActivePlayer(index: number) {
+        if (index < 1 || index > 5) {
+            throw new Error('Cannot set active player to ' + index + '. Active player must be between 1 and 5.');
+        }
+
+        let activePlayer = null;
+
+        switch (index) {
+            case 1:
+                activePlayer = this.playerOne;
+                break;
+            case 2:
+                activePlayer = this.playerTwo;
+                break;
+            case 3:
+                activePlayer = this.playerThree;
+                break;
+            case 4:
+                activePlayer = this.playerFour;
+                break;
+            case 5:
+                activePlayer = this.playerFive;
+                break;
+        }
+
+        if (activePlayer == null) {
+            throw new Error('Cannot set active player to ' + index + '. The player does not exist.');
+        }
+
+        this._activePlayer = index;
+    }
+
+    unsetActivePlayer() {
+        this._activePlayer = 0;
     }
 }
 

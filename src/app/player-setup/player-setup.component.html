@@ -14,22 +14,22 @@
                 <div class="ui five column stackable grid">
                     <div class="column center aligned">
                         <div class="player one" [ngClass]="{'empty': playerService.playerOne == null}">
-                            <span *ngIf="playerService.playerOne != null" class="name">{{playerService.playerOne.name}}</span>
+                            <span *ngIf="playerService.playerOne != null" class="name">{{playerService.playerOne.shortName}}</span>
                         </div>
                     </div>
                     <div class="column center aligned">
                         <div class="player two" [ngClass]="{'empty': playerService.playerTwo == null}">
-                            <span *ngIf="playerService.playerTwo != null" class="name">{{playerService.playerTwo.name}}</span>
+                            <span *ngIf="playerService.playerTwo != null" class="name">{{playerService.playerTwo.shortName}}</span>
                         </div>
                     </div>
                     <div class="column center aligned">
                         <div class="player three" [ngClass]="{'empty': playerService.playerThree == null}">
-                            <span *ngIf="playerService.playerThree != null" class="name">{{playerService.playerThree.name}}</span>
+                            <span *ngIf="playerService.playerThree != null" class="name">{{playerService.playerThree.shortName}}</span>
                         </div>
                     </div>
                     <div class="column center aligned">
                         <div class="player four" [ngClass]="{'empty': playerService.playerFour == null}">
-                            <span *ngIf="playerService.playerFour != null" class="name">{{playerService.playerFour.name}}</span>
+                            <span *ngIf="playerService.playerFour != null" class="name">{{playerService.playerFour.shortName}}</span>
                         </div>
                     </div>
                     <div class="column center aligned">

@@ -13,24 +13,28 @@
             <div class="fourteen wide column">
                 <div class="ui five column stackable grid">
                     <div class="column center aligned">
-                        <div class="player one" [ngClass]="{'empty': false}">
-                            <span class="name">Na</span>
+                        <div class="player one" [ngClass]="{'empty': playerService.playerOne == null}">
+                            <span *ngIf="playerService.playerOne != null" class="name">{{playerService.playerOne.name}}</span>
                         </div>
                     </div>
                     <div class="column center aligned">
-                        <div class="player two" [ngClass]="{'empty': true}">
+                        <div class="player two" [ngClass]="{'empty': playerService.playerTwo == null}">
+                            <span *ngIf="playerService.playerTwo != null" class="name">{{playerService.playerTwo.name}}</span>
                         </div>
                     </div>
                     <div class="column center aligned">
-                        <div class="player three" [ngClass]="{'empty': true}">
+                        <div class="player three" [ngClass]="{'empty': playerService.playerThree == null}">
+                            <span *ngIf="playerService.playerThree != null" class="name">{{playerService.playerThree.name}}</span>
                         </div>
                     </div>
                     <div class="column center aligned">
-                        <div class="player four" [ngClass]="{'empty': true}">
+                        <div class="player four" [ngClass]="{'empty': playerService.playerFour == null}">
+                            <span *ngIf="playerService.playerFour != null" class="name">{{playerService.playerFour.name}}</span>
                         </div>
                     </div>
                     <div class="column center aligned">
-                        <div class="player five" [ngClass]="{'empty': true}">
+                        <div class="player five" [ngClass]="{'empty': playerService.playerFive == null}">
+                            <span *ngIf="playerService.playerFive != null" class="name">{{playerService.playerFive.name}}</span>
                         </div>
                     </div>
                 </div>

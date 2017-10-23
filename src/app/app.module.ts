@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { PlayerSetupComponent } from './player-setup/player-setup.component';
 import { CharacterPageComponent } from './character-page/character-page.component';
 import { CharacterService } from './character.service';
+import { PlayerService } from './player.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { CharacterService } from './character.service';
       HttpModule,
       RoutingModule
   ],
-  providers: [CharacterService],
+  providers: [CharacterService, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

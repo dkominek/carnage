@@ -14,10 +14,10 @@ export class CharacterService {
             null,
             73, 49, 23, 58),
         new Entree(
-            'Taco',
+            'Salmon',
             CharacterSubtype.CARNIVORE, 9.99,
             null,
-            73, 49, 23, 58)
+            34, 57, 91, 45)
     ];
 }
 
@@ -63,19 +63,19 @@ export class Appetizer extends Character {
     }
 
     get descriptorOne(): string {
-        throw new Error('Method not implemented.');
+        return 'Descriptor One';
     }
 
     get descriptorTwo(): string {
-        throw new Error('Method not implemented.');
+        return 'Descriptor Two';
     }
 
     get descriptorThree(): string {
-        throw new Error('Method not implemented.');
+        return 'Descriptor Three';
     }
 
     get descriptorFour(): string {
-        throw new Error('Method not implemented.');
+        return 'Descriptor Four';
     }
 }
 
@@ -85,19 +85,19 @@ export class Drink extends Character {
     }
 
     get descriptorOne(): string {
-        throw new Error('Method not implemented.');
+        return 'Descriptor One';
     }
 
     get descriptorTwo(): string {
-        throw new Error('Method not implemented.');
+        return 'Descriptor Two';
     }
 
     get descriptorThree(): string {
-        throw new Error('Method not implemented.');
+        return 'Descriptor Three';
     }
 
     get descriptorFour(): string {
-        throw new Error('Method not implemented.');
+        return 'Descriptor Four';
     }
 }
 
@@ -107,19 +107,19 @@ export class Entree extends Character {
     }
 
     get descriptorOne(): string {
-        return 'Saltiness';
+        return 'Descriptor One';
     }
 
     get descriptorTwo(): string {
-        return 'Saltiness';
+        return 'Descriptor Two';
     }
 
     get descriptorThree(): string {
-        return 'Saltiness';
+        return 'Descriptor Three';
     }
 
     get descriptorFour(): string {
-        return 'Saltiness';
+        return 'Descriptor Four';
     }
 }
 
@@ -129,18 +129,18 @@ export class Dessert extends Character {
     }
 
     get descriptorOne(): string {
-        throw new Error('Method not implemented.');
+        return 'Descriptor One';
     }
 
     get descriptorTwo(): string {
-        throw new Error('Method not implemented.');
+        return 'Descriptor Two';
     }
 
     get descriptorThree(): string {
-        throw new Error('Method not implemented.');
+        return 'Descriptor Three';
     }
 
     get descriptorFour(): string {
-        throw new Error('Method not implemented.');
+        return 'Descriptor Four';
     }
 }

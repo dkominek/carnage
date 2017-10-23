@@ -9,12 +9,14 @@ import { PlayerSetupComponent } from './player-setup/player-setup.component';
 import { CharacterPageComponent } from './character-page/character-page.component';
 import { CharacterService } from './character.service';
 import { PlayerService } from './player.service';
+import { AddPlayerComponent } from './add-player/add-player.component';
 
 @NgModule({
   declarations: [
       AppComponent,
       PlayerSetupComponent,
-      CharacterPageComponent
+      CharacterPageComponent,
+      AddPlayerComponent
   ],
   imports: [
       BrowserModule,

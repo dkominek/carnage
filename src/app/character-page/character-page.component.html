@@ -1,80 +1,97 @@
 <div class="ui grid container" id="character-view">
-    <div class="eight wide column">
-        <div class="ui items" id="name-type">
-            <div class="item">
-                <div class="image">
-                    <img [attr.src]="'/assets/icons/' + character.type.toLowerCase() + '-' + character.subtype.toLowerCase() + '.svg'"/>
+    <div class="eight wide computer sixteen wide tablet column">
+        <div class="ui grid">
+            <div class="sixteen wide column">
+                <div class="ui items" id="name-type">
+                    <div class="item">
+                        <div class="image">
+                            <img [attr.src]="'/assets/icons/' + character?.type?.toLowerCase() + '-' + character?.subtype?.toLowerCase() + '.svg'"/>
+                        </div>
+                        <div class="content">
+                            <span class="header">{{character?.name}}</span>
+                            <div class="meta">
+                                <span>{{character?.type}} / {{character?.subtype}}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="content">
-                    <span class="header">{{character?.name}}</span>
-                    <div class="meta">
-                        <span>{{character.type}} / {{character.subtype}}</span>
+            </div>
+            <div class="sixteen wide tablet mobile only column">
+                <div id="small-image">
+                    <img src="/assets/characters/{{character?.name.toLowerCase()}}.svg" />
+                </div>
+            </div>
+            <div class="sixteen wide column">
+                <div class="ui items" id="story">
+                    <div class="item">
+                        <div class="content">
+                            <span class="header">Story</span>
+                            <div class="description">
+                                <p *ngIf="character.story == null">This character does not have a story yet...</p>
+                                <p *ngIf="character.story != null">{{storyExpanded ? character?.story?.slice(0, 100) : character?.story}}</p>
+                            </div>
+                            <div *ngIf="character?.story?.length > 200" class="extra" (click)="storyExpanded = !storyExpanded">
+                                Show {{storyExpanded ? 'more' : 'less'}}...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui items" id="attributes">
+                    <div class="item">
+                        <div class="content">
+                            <span class="header">{{character?.descriptorOne}}</span>
+                            <div class="description">
+                                <div class="ui indicating progress">
+                                    <div class="bar" [ngStyle]="{ 'width.%': character?.attributeOne }"></div>
+                                    <div class="label">{{character?.attributeOne}} / 100</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                            <span class="header">{{character?.descriptorTwo}}</span>
+                            <div class="description">
+                                <div class="ui indicating progress">
+                                    <div class="bar" [ngStyle]="{ 'width.%': character?.attributeTwo }"></div>
+                                    <div class="label">{{character?.attributeTwo}} / 100</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                            <span class="header">{{character?.descriptorThree}}</span>
+                            <div class="description">
+                                <div class="ui indicating progress">
+                                    <div class="bar" [ngStyle]="{ 'width.%': character?.attributeThree }"></div>
+                                    <div class="label">{{character?.attributeThree}} / 100</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                            <span class="header">{{character?.descriptorFour}}</span>
+                            <div class="description">
+                                <div class="ui indicating progress">
+                                    <div class="bar" [ngStyle]="{ 'width.%': character?.attributeFour }"></div>
+                                    <div class="label">{{character?.attributeFour}} / 100</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="ui items" id="story">
-            <div class="item">
-                <div class="content">
-                    <span class="header">Story/Description</span>
-                    <div class="description">
-                        <p>{{character.story.slice(0, 100)}}</p>
-                    </div>
-                    <div *ngIf="character.story.length > 200" class="extra" (click)="storyExpanded = !storyExpanded">
-                        Show {{storyExpanded ? 'more' : 'less'}}...
-                    </div>
-                </div>
-            </div>
+        <div>
+            <button class="ui orange button right floated">Add To Cart</button>
+            <button class="ui blue button right floated">${{character?.price}}</button>
         </div>
-        <div class="ui items" id="attributes">
-            <div class="item">
-                <div class="content">
-                    <span class="header">{{character.descriptorOne}}</span>
-                    <div class="description">
-                        <div class="ui indicating progress">
-                            <div class="bar" [ngStyle]="{ 'width.%': character.attributeOne }"></div>
-                            <div class="label">{{character.attributeOne}} / 100</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="content">
-                    <span class="header">{{character.descriptorTwo}}</span>
-                    <div class="description">
-                        <div class="ui indicating progress">
-                            <div class="bar" [ngStyle]="{ 'width.%': character.attributeTwo }"></div>
-                            <div class="label">{{character.attributeTwo}} / 100</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="content">
-                    <span class="header">{{character.descriptorThree}}</span>
-                    <div class="description">
-                        <div class="ui indicating progress">
-                            <div class="bar" [ngStyle]="{ 'width.%': character.attributeThree }"></div>
-                            <div class="label">{{character.attributeThree}} / 100</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="content">
-                    <span class="header">{{character.descriptorFour}}</span>
-                    <div class="description">
-                        <div class="ui indicating progress">
-                            <div class="bar" [ngStyle]="{ 'width.%': character.attributeFour }"></div>
-                            <div class="label">{{character.attributeFour}} / 100</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
-    <div class="eight wide column">
-        <img src="/assets/characters/{{character?.name.toLowerCase()}}.svg" />
+    <div class="eight wide large screen computer only column">
+        <div id="large-image">
+            <img src="/assets/characters/{{character?.name?.toLowerCase()}}.svg" />
+        </div>
     </div>
 </div>

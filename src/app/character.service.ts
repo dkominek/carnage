@@ -7,7 +7,17 @@ export class CharacterService {
             'Hermberg',
             CharacterSubtype.CARNIVORE, 10.99,
             'This hamburger has some zest. Wouldn\'t want to meet him in a dark ally',
-            10, 15, 24, 85)
+            10, 15, 24, 85),
+        new Appetizer(
+            'Taco',
+            CharacterSubtype.CARNIVORE, 9.99,
+            null,
+            73, 49, 23, 58),
+        new Entree(
+            'Taco',
+            CharacterSubtype.CARNIVORE, 9.99,
+            null,
+            73, 49, 23, 58)
     ];
 }
 

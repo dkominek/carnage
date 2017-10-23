@@ -16,7 +16,15 @@ export class CharacterService {
         new Entree(
             'Salmon',
             CharacterSubtype.CARNIVORE, 9.99,
-            null,
+            'Lorem ipsum dolor sit amet, rebum temporibus neglegentur quo no, ei vis propriae percipit. Idque volumus vel ea, fabellas scripserit quo ad, ius ex accumsan scripserit. Phaedrum quaerendum nam ut, ius audire oblique argumentum ex. Summo albucius in pro, case fugit deterruisset at sit. Ex dicat iracundia adipiscing mei, semper consulatu intellegam eam te, vim quaeque incorrupte no.\n' +
+            '\n' +
+            'Eu augue voluptatibus eam. Inani mundi vim id. No mollis lucilius eum, idque ignota ius id, te natum nostrud iudicabit vim. Ei cetero ornatus est, quis quas etiam eum ad. Usu ceteros repudiare eloquentiam te, vim et doming nostrud propriae. Pri senserit referrentur adversarium et, at eos tollit recteque.\n' +
+            '\n' +
+            'Qui eu utinam pertinax liberavisse, his latine fabellas eloquentiam te. His ut inani novum scripta, has diam convenire te, delenit mandamus laboramus te per. Id amet minim pri, elit movet facilis vel eu. Eu sed appareat maluisset, aliquid convenire intellegebat duo no. Id tantas maluisset elaboraret sea. Eu delenit erroribus definiebas mel, sumo dico eu nec.\n' +
+            '\n' +
+            'Omnes definitiones vis ne. Ut diam tota mollis nam, commune copiosae ex usu. At viris praesent pri, eum illud perpetua ex. Id eos mentitum luptatum, eu ius error utinam conclusionemque. Tractatos democritum et sea. Cu usu reque debet maiestatis.\n' +
+            '\n' +
+            'Vis dolore civibus delectus no. Vim nonumes assentior at, cu qui prima viderer scribentur. Vis nobis recusabo convenire no, discere eruditi duo et. Cum ei utinam qualisque voluptaria, qui at amet salutandi, ius libris delicata iracundia ad. Ea ius mandamus appellantur, accusam electram his cu.',
             34, 57, 91, 45)
     ];
 }

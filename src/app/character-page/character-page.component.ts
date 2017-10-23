@@ -10,8 +10,8 @@ import {Character, CharacterService} from '../character.service';
 export class CharacterPageComponent implements OnInit {
 
     character: Character;
-    error: boolean;
-    storyExpanded: boolean;
+    error = false;
+    storyExpanded = false;
 
     constructor(private route: ActivatedRoute, private router: Router, private characterService: CharacterService) {
     }

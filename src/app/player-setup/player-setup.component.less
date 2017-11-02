@@ -1,5 +1,10 @@
 @import '../../../semantic/src/themes/default/globals/site.variables';
 
+:host {
+  position: relative;
+  height: 100%;
+}
+
 h1.ui.header {
   color: #1b1464;
 }
@@ -12,15 +17,18 @@ h1.ui.header {
     margin: 0 auto;
     background: #fff;
     cursor: pointer;
+    position: relative;
 
-    &.empty:after {
-      content: "+";
-      font-size: 45px;
-      font-weight: 600;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
+    &.empty {
+      &:after {
+        content: "+";
+        font-size: 100px;
+        line-height: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-55%);
+      }
     }
 
     &.one {
@@ -46,38 +54,89 @@ h1.ui.header {
 
     .name {
       font-size: 96px;
+      line-height: 1;
       font-weight: 400;
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-45%);
       color: #1b1464;
       font-family: "Nexa", sans-serif;
     }
   }
+
+  .details {
+    margin-top: 10px;
+    .name {
+      font-size: 25px;
+      line-height: 1.5;
+      font-weight: bolder;
+      color: #1b1464;
+    }
+
+    .cart.link {
+      font-size: 18px;
+      color: #1b1464;
+
+      &:hover {
+        color: #ff5500;
+      }
+    }
+  }
 }
 
-.primary.action .ui.button {
-  display: block;
-  width: 100%;
-  background: #fff !important;
-  border: 1px solid #1b1464 !important;
-  color: #1b1464 !important;
+.primary.action, .secondary.action {
+  .ui.button {
+    display: block;
+    width: 100%;
+    background: #fff !important;
+    border: 1px solid #1b1464 !important;
+    color: #1b1464 !important;
 
-  &:hover {
-    background: #1b1464 !important;
-    color: #fff !important;
+    &:hover {
+      background: #1b1464 !important;
+      color: #fff !important;
+    }
+  }
+}
+
+.line {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 0.5em;
+  color: #1b1464;
+  font-family: "Corbel", sans-serif;
+}
+
+@media only screen and (min-width: @computerBreakpoint) and (max-width: @largeMonitorBreakpoint) {
+
+  .players-container {
+    .player .name {
+      font-size: 62px;
+    }
+    .player.empty:after {
+      font-size: 70px;
+    }
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @computerBreakpoint) {
+
+  .players-container {
+    .player .name {
+      font-size: 40px;
+    }
+    .player.empty:after {
+      font-size: 48px;
+    }
   }
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-  .page-title {
-    padding-top: 15vh;
-  }
 
   .players-container {
     position: absolute;
-    top: 45vh;
+    top: 30%;
     width: 100%;
 
     .player {
@@ -89,7 +148,13 @@ h1.ui.header {
   .primary.action {
     position: absolute;
     right: 100px;
-    bottom: 30px;
+    bottom: 50px;
+  }
+
+  .secondary.action {
+    position: absolute;
+    left: 100px;
+    bottom: 50px;
   }
 }
 
@@ -105,7 +170,7 @@ h1.ui.header {
     }
   }
 
-  .primary.action {
+  .primary.action, .secondary.action {
     padding: 20px 30px 50px;
   }
 }

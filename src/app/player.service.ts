@@ -1,16 +1,35 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {Character} from './character.service';
 
 @Injectable()
 export class PlayerService {
 
-    playerOne: Player;
-    playerTwo: Player;
-    playerThree: Player;
-    playerFour: Player;
-    playerFive: Player;
+    private _playerOne: Player;
+    get playerOne(): Player {
+        return this._playerOne;
+    }
+    private _playerTwo: Player;
+    get playerTwo(): Player {
+        return this._playerTwo;
+    }
+    private _playerThree: Player;
+    get playerThree(): Player {
+        return this._playerThree;
+    }
+    private _playerFour: Player;
+    get playerFour(): Player {
+        return this._playerFour;
+    }
+    private _playerFive: Player;
+    get playerFive(): Player {
+        return this._playerFive;
+    }
 
     private _activePlayer = 0;
+    get activePlayerIndex(): number {
+        return this._activePlayer;
+    }
+    public activePlayerChanged: EventEmitter<Player> = new EventEmitter<Player>();
 
     constructor() {
     }
@@ -19,8 +38,26 @@ export class PlayerService {
         if (index < 1 || index > 5) {
             return;
         }
-        if (this.getPlayer(index) != null) {
-
+        if (this.getPlayer(index) == null) {
+            switch (index) {
+                case 1:
+                    this._playerOne = player;
+                    break;
+                case 2:
+                    this._playerTwo = player;
+                    break;
+                case 3:
+                    this._playerThree = player;
+                    break;
+                case 4:
+                    this._playerFour = player;
+                    break;
+                case 5:
+                    this._playerFive = player;
+                    break;
+                default:
+                    throw new Error('Invalid player index: ' + index);
+            }
         } else {
             throw new Error('Cannot add player in slot ' + index + '. Slot is already filled.');
         }
@@ -33,15 +70,17 @@ export class PlayerService {
 
         switch (index) {
             case 1:
-                return this.playerOne;
+                return this._playerOne;
             case 2:
-                return this.playerTwo;
+                return this._playerTwo;
             case 3:
-                return this.playerThree;
+                return this._playerThree;
             case 4:
-                return this.playerFour;
+                return this._playerFour;
             case 5:
-                return this.playerFive;
+                return this._playerFive;
+            default:
+                throw new Error('Invalid player index: ' + index);
         }
     }
 
@@ -53,20 +92,22 @@ export class PlayerService {
         if (this.getPlayer(index) != null) {
             switch (index) {
                 case 1:
-                    this.playerOne = null;
+                    this._playerOne = null;
                     break;
                 case 2:
-                    this.playerTwo = null;
+                    this._playerTwo = null;
                     break;
                 case 3:
-                    this.playerThree = null;
+                    this._playerThree = null;
                     break;
                 case 4:
-                    this.playerFour = null;
+                    this._playerFour = null;
                     break;
                 case 5:
-                    this.playerFive = null;
+                    this._playerFive = null;
                     break;
+                default:
+                    throw new Error('Invalid player index: ' + index);
             }
         } else {
             throw new Error('Cannot remove player in slot ' + index + '. Slot is empty.');
@@ -76,15 +117,15 @@ export class PlayerService {
     getActivePlayer(): Player|null {
         switch (this._activePlayer) {
             case 1:
-                return this.playerOne;
+                return this._playerOne;
             case 2:
-                return this.playerTwo;
+                return this._playerTwo;
             case 3:
-                return this.playerThree;
+                return this._playerThree;
             case 4:
-                return this.playerFour;
+                return this._playerFour;
             case 5:
-                return this.playerFive;
+                return this._playerFive;
             default:
                 return null;
         }
@@ -113,6 +154,8 @@ export class PlayerService {
             case 5:
                 activePlayer = this.playerFive;
                 break;
+            default:
+                throw new Error('Invalid player index: ' + index);
         }
 
         if (activePlayer == null) {
@@ -120,10 +163,12 @@ export class PlayerService {
         }
 
         this._activePlayer = index;
+        this.activePlayerChanged.emit(this.getActivePlayer());
     }
 
     unsetActivePlayer() {
         this._activePlayer = 0;
+        this.activePlayerChanged.emit(this.getActivePlayer());
     }
 }
 
@@ -150,8 +195,6 @@ export class Player {
     ) {
         this.name = name;
     }
-
-    setName(name: string) {}
 }
 
 export class Cart {

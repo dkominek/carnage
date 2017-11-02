@@ -1,0 +1,7 @@
+<div *ngIf="player != null && visible" class="player">
+  <div class="details">
+    <div class="line name">{{player.name}}</div>
+    <a class="line cart link" routerLink="/player/cart">{{player.cart.items.length}} Items ({{player.cart.total | currency:'USD':true}})</a>
+  </div>
+  <div class="avatar" [ngClass]="avatarClass">{{player.shortName}}</div>
+</div>

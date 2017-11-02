@@ -10,13 +10,24 @@ import { CharacterPageComponent } from './character-page/character-page.componen
 import { CharacterService } from './character.service';
 import { PlayerService } from './player.service';
 import { AddPlayerComponent } from './add-player/add-player.component';
+import { HeaderComponent } from './header/header.component';
+import { PlayerIndicatorComponent } from './player-indicator/player-indicator.component';
+import { MenuService } from './menu.service';
+import { SelectCharactersComponent } from './select-characters/select-characters.component';
+import { ViewGamesComponent } from './view-games/view-games.component';
+import { PlayerCartComponent } from './player-cart/player-cart.component';
 
 @NgModule({
   declarations: [
       AppComponent,
       PlayerSetupComponent,
       CharacterPageComponent,
-      AddPlayerComponent
+      AddPlayerComponent,
+      HeaderComponent,
+      PlayerIndicatorComponent,
+      SelectCharactersComponent,
+      ViewGamesComponent,
+      PlayerCartComponent,
   ],
   imports: [
       BrowserModule,
@@ -24,7 +35,7 @@ import { AddPlayerComponent } from './add-player/add-player.component';
       HttpModule,
       RoutingModule
   ],
-  providers: [CharacterService, PlayerService],
+  providers: [CharacterService, PlayerService, MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

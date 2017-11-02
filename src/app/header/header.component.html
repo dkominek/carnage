@@ -1,0 +1,11 @@
+<div class="header">
+  <div class="logo">
+    <img src="/assets/logo.svg"/>
+  </div>
+  <div *ngIf="visible" class="ui compact massive secondary menu">
+    <a class="item" routerLink="/player/setup" routerLinkActive="active">Setup</a>
+    <a class="item" routerLink="/devour" routerLinkActive="active">Devour</a>
+    <a class="item" routerLink="/discover" routerLinkActive="active">Discover</a>
+  </div>
+  <app-player-indicator></app-player-indicator>
+</div>

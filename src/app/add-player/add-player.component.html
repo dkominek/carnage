@@ -1,3 +1,25 @@
-<p>
-  add-player works!
-</p>
+<div style="height: 100%; position: relative;">
+    <div class="ui grid page-title">
+        <div class="sixteen wide column">
+            <h1 class="ui center aligned header">Setup New Gamertag</h1>
+        </div>
+    </div>
+    <div class="ui grid centered">
+        <div class="sixteen wide column centered">
+            <div class="avatar" [ngClass]="avatarClass"><span class="name">{{player.shortName}}</span></div>
+        </div>
+        <div class="six wide column centered">
+            <div class="ui input" id="player-name">
+                <input type="text" name="player-name" [(ngModel)]="player.name" placeholder="Enter a gamertag..."/>
+            </div>
+            <p class="line">Your gamertag will be your online persona.</p>
+            <p class="line">It is who you are as a gamer.</p>
+        </div>
+    </div>
+    <div class="primary action">
+        <button class="ui button massive" (click)="addPlayer()" [disabled]="player.name.length < 6">Add</button>
+    </div>
+    <div class="secondary action">
+        <button class="ui button massive" (click)="cancel()">Cancel</button>
+    </div>
+</div>

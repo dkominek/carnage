@@ -1,10 +1,9 @@
-<div class="logo">
-    <img src="/assets/logo.svg"/>
-</div>
 <div style="height: 100%; position: relative;">
     <div class="ui grid page-title">
         <div class="sixteen wide column">
             <h1 class="ui center aligned header">Player Setup</h1>
+            <p class="line">Select a '+' below to add players. To modify a cart, select an existing player avatar.</p>
+            <p class="line">When your party is ready to checkout, select "Ready!"</p>
         </div>
     </div>
     <div class="players-container">
@@ -13,28 +12,63 @@
             <div class="fourteen wide column">
                 <div class="ui five column stackable grid">
                     <div class="column center aligned">
-                        <div class="player one" [ngClass]="{'empty': playerService.playerOne == null}">
+                        <div class="player one" [ngClass]="{'empty': playerService.playerOne == null}" (click)="addOrSelectPlayer(1)">
                             <span *ngIf="playerService.playerOne != null" class="name">{{playerService.playerOne.shortName}}</span>
                         </div>
+                        <div *ngIf="playerService.playerOne != null" class="details">
+                            <div class="line name">{{playerService.playerOne.name}}</div>
+                            <a class="line cart link" routerLink="/cart" (click)="playerService.setActivePlayer(1)">
+                                {{playerService.playerOne.cart.items.length}} Items
+                                ({{playerService.playerOne.cart.total | currency:'USD':true}})
+                            </a>
+                        </div>
                     </div>
                     <div class="column center aligned">
-                        <div class="player two" [ngClass]="{'empty': playerService.playerTwo == null}">
+                        <div class="player two" [ngClass]="{'empty': playerService.playerTwo == null}" (click)="addOrSelectPlayer(2)">
                             <span *ngIf="playerService.playerTwo != null" class="name">{{playerService.playerTwo.shortName}}</span>
                         </div>
+                        <div *ngIf="playerService.playerTwo != null" class="details">
+                            <div class="line name">{{playerService.playerTwo.name}}</div>
+                            <a class="line cart link" routerLink="/cart" (click)="playerService.setActivePlayer(2)">
+                                {{playerService.playerTwo.cart.items.length}} Items
+                                ({{playerService.playerTwo.cart.total | currency:'USD':true}})
+                            </a>
+                        </div>
                     </div>
                     <div class="column center aligned">
-                        <div class="player three" [ngClass]="{'empty': playerService.playerThree == null}">
+                        <div class="player three" [ngClass]="{'empty': playerService.playerThree == null}" (click)="addOrSelectPlayer(3)">
                             <span *ngIf="playerService.playerThree != null" class="name">{{playerService.playerThree.shortName}}</span>
                         </div>
-                    </div>
-                    <div class="column center aligned">
-                        <div class="player four" [ngClass]="{'empty': playerService.playerFour == null}">
-                            <span *ngIf="playerService.playerFour != null" class="name">{{playerService.playerFour.shortName}}</span>
+                        <div *ngIf="playerService.playerThree != null" class="details">
+                            <div class="line name">{{playerService.playerThree.name}}</div>
+                            <a class="line cart link" routerLink="/cart" (click)="playerService.setActivePlayer(3)">
+                                {{playerService.playerThree.cart.items.length}} Items
+                                ({{playerService.playerThree.cart.total | currency:'USD':true}})
+                            </a>
                         </div>
                     </div>
                     <div class="column center aligned">
-                        <div class="player five" [ngClass]="{'empty': playerService.playerFive == null}">
+                        <div class="player four" [ngClass]="{'empty': playerService.playerFour == null}" (click)="addOrSelectPlayer(4)">
+                            <span *ngIf="playerService.playerFour != null" class="name">{{playerService.playerFour.shortName}}</span>
+                        </div>
+                        <div *ngIf="playerService.playerFour != null" class="details">
+                            <div class="line name">{{playerService.playerFour.name}}</div>
+                            <a class="line cart link" routerLink="/cart" (click)="playerService.setActivePlayer(4)">
+                                {{playerService.playerFour.cart.items.length}} Items
+                                ({{playerService.playerFour.cart.total | currency:'USD':true}})
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column center aligned">
+                        <div class="player five" [ngClass]="{'empty': playerService.playerFive == null}" (click)="addOrSelectPlayer(5)">
                             <span *ngIf="playerService.playerFive != null" class="name">{{playerService.playerFive.name}}</span>
+                        </div>
+                        <div *ngIf="playerService.playerFive != null" class="details">
+                            <div class="line name">{{playerService.playerFive.name}}</div>
+                            <a class="line cart link" routerLink="/cart" (click)="playerService.setActivePlayer(5)">
+                                {{playerService.playerFive.cart.items.length}} Items
+                                ({{playerService.playerFive.cart.total | currency:'USD':true}})
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -43,6 +77,6 @@
         </div>
     </div>
     <div class="primary action">
-        <button class="ui button massive" [disabled]="false">Ready</button>
+        <button class="ui button massive" [disabled]="false">Ready!</button>
     </div>
 </div>

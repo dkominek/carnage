@@ -1,0 +1,64 @@
+@import '../../../semantic/src/themes/default/globals/site.variables';
+
+.header {
+  height: 170px;
+}
+
+.logo {
+  text-align: center;
+  img {
+    width: 150px;
+  }
+}
+
+@media only screen and (max-width: @tabletBreakpoint) {
+  .logo {
+    margin-bottom: -70px;
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    width: 150px;
+  }
+}
+
+.ui.menu {
+  position: absolute;
+  top: 40px;
+  left: 250px;
+
+  .item {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Nexa', sans-serif;
+    color: #1b1464;
+
+    &:hover {
+      background: unset !important;
+      color: #ff5500;
+    }
+
+    &.active {
+      background: unset !important;
+
+      &:hover {
+        background: unset !important;
+        color: #1b1464;
+      }
+
+      &:after {
+        content: " ";
+        position: absolute;
+        bottom: 14px;
+        left: 10%;
+        width: 80%;
+        height: 4px;
+        background: #eaeaea;
+      }
+    }
+  }
+}

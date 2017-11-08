@@ -26,6 +26,21 @@ export class CharacterService {
             '\n' +
             'Vis dolore civibus delectus no. Vim nonumes assentior at, cu qui prima viderer scribentur. Vis nobis recusabo convenire no, discere eruditi duo et. Cum ei utinam qualisque voluptaria, qui at amet salutandi, ius libris delicata iracundia ad. Ea ius mandamus appellantur, accusam electram his cu.',
             34, 57, 91, 45)
+        new Appetizer(
+            'Boneless Wings',
+            CharacterSubtype.CARNIVORE, 9.99,
+            null,
+            73, 49, 23, 58),
+        new Dessert(
+            'Cake',
+            CharacterSubtype.CARNIVORE, 9.99,
+            null,
+            73, 49, 23, 58),
+        new Drink(
+            'Pop',
+            CharacterSubtype.HERBIVORE, 9.99,
+            null,
+            73, 49, 23, 58),
     ];
 }
 

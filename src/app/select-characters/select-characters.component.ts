@@ -33,6 +33,17 @@ export class SelectCharactersComponent implements OnInit {
             this.filters.push(filterName);
         }
 
+        const herbivoreIndex = this.filters.indexOf('herbivore');
+        const carnivoreIndex = this.filters.indexOf('carnivore');
+
+        if (filterName === 'carnivore' && carnivoreIndex !== -1 && herbivoreIndex !== -1) {
+            this.filters.splice(herbivoreIndex, 1);
+        }
+
+        if (filterName === 'herbivore' && carnivoreIndex !== -1 && herbivoreIndex !== -1) {
+            this.filters.splice(carnivoreIndex, 1);
+        }
+
         this.filterCharacters();
     }
 

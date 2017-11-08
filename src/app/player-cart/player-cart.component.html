@@ -1,3 +1,47 @@
-<p>
-  player-cart works!
-</p>
+<div class="ui container">
+  <div class="ui items">
+    <div class="item">
+      <a class="image"></a>
+      <div class="middle aligned content">
+        <a class="header"></a>
+        <div class="description">
+          <div class="ui four column grid">
+            <div class="column"><h3>Character</h3></div>
+            <div class="center aligned column"><h3>Price</h3></div>
+            <div class="center aligned column"><h3>Quantity</h3></div>
+            <div class="center aligned column"><h3>Total</h3></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let cartItem of player.cart.items" class="cart item">
+      <div class="image">
+        <app-character-avatar [character]="cartItem.character" [noHover]="true"></app-character-avatar>
+      </div>
+      <div class="middle aligned content">
+        <div class="ui four column grid">
+          <div class="column">
+            <h2 class="ui header">{{cartItem.character.name}}</h2>
+          </div>
+          <div class="center aligned middle aligned column">{{cartItem.character.priceString}}</div>
+          <div class="center aligned middle aligned column">{{cartItem.quantity}}</div>
+          <div class="center aligned middle aligned column">${{(cartItem.quantity * cartItem.character.price).toFixed(2)}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="cart item">
+      <a class="image"></a>
+      <div class="middle aligned content">
+        <a class="header"></a>
+        <div class="description">
+          <div class="ui four column grid">
+            <div class="column"></div>
+            <div class="center aligned middle aligned column"></div>
+            <div class="center aligned middle aligned column"><h3>Cart Total</h3></div>
+            <div class="center aligned middle aligned column">${{player.cart.totalPrice.toFixed(2)}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

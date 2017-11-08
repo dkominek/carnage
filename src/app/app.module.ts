@@ -16,6 +16,7 @@ import { MenuService } from './menu.service';
 import { SelectCharactersComponent } from './select-characters/select-characters.component';
 import { ViewGamesComponent } from './view-games/view-games.component';
 import { PlayerCartComponent } from './player-cart/player-cart.component';
+import { CharacterAvatarComponent } from './character-avatar/character-avatar.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PlayerCartComponent } from './player-cart/player-cart.component';
       SelectCharactersComponent,
       ViewGamesComponent,
       PlayerCartComponent,
+      CharacterAvatarComponent,
   ],
   imports: [
       BrowserModule,

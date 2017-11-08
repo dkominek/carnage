@@ -48,7 +48,7 @@ export class SelectCharactersComponent implements OnInit {
     }
 
     protected gotoCharacter(character) {
-        this.router.navigate(['/character', character.name.toLowerCase()]);
+        this.router.navigate(['/character', character.nameLowercase]);
     }
 
     protected filterCharacters() {

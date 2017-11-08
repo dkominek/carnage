@@ -29,7 +29,7 @@ export class CharacterPageComponent implements OnInit {
         }
 
         this.route.params.subscribe(params => {
-            this.character = this.characterService.characters.find((c) => c.name.toLowerCase() === params['name'].toLowerCase());
+            this.character = this.characterService.characters.find((c) => c.nameLowercase === params['name'].toLowerCase());
             if (this.character == null) {
                 this.router.navigate(['/devour']);
             }

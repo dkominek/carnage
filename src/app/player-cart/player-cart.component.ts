@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PlayerService} from '../player.service';
+import {Player, PlayerService} from '../player.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -9,6 +9,8 @@ import {Router} from '@angular/router';
 })
 export class PlayerCartComponent implements OnInit {
 
+    protected player: Player;
+
   constructor(private router: Router, private playerService: PlayerService) { }
 
   ngOnInit() {
@@ -16,6 +18,8 @@ export class PlayerCartComponent implements OnInit {
           this.router.navigate(['/player', 'setup']);
           return;
       }
+
+      this.player = this.playerService.getActivePlayer();
   }
 
 }

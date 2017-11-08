@@ -6,7 +6,7 @@
        Fonts
 --------------------*/
 
-@fontName          : 'Lato';
+@fontName          : 'Nexa';
 @headerFontName    : 'Nexa';
 @fontSmoothing     : antialiased;
 

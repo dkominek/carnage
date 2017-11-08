@@ -14,8 +14,8 @@
       </ul>
     </div>
   </div>
-  <div *ngIf="characters.length > 0; else noCharacters" class="ui five column grid stackable">
-    <div *ngFor="let character of characters" class="column">
+  <div *ngIf="characters.length > 0; else noCharacters" class="ui doubling five column grid">
+    <div *ngFor="let character of characters" class="center aligned column">
       <app-character-avatar [character]="character" (click)="gotoCharacter(character)"></app-character-avatar>
     </div>
   </div>

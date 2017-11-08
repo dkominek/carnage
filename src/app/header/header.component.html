@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" [ngClass]="{ opaque: isScrolled }">
   <div class="logo">
     <img src="/assets/logo.svg"/>
   </div>
@@ -9,3 +9,4 @@
   </div>
   <app-player-indicator></app-player-indicator>
 </div>
+<div class="headerpush"></div>

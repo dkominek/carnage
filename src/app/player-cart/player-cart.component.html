@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <div *ngFor="let cartItem of player.cart.items" class="cart item">
+    <div *ngFor="let cartItem of player?.cart?.items" class="cart item">
       <div class="image">
         <app-character-avatar [character]="cartItem.character" [noHover]="true"></app-character-avatar>
       </div>

@@ -1,25 +1,31 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {MenuService} from '../menu.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.less']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.less']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+    protected isScrolled = false;
+    protected visible = true;
 
-  protected visible = true;
+    @HostListener('window:scroll') onWindowScroll(evt) {
+        const currPos = window.pageYOffset;
+        this.isScrolled = currPos > 0;
+    }
 
-  constructor(private router: Router, private menuService: MenuService) { }
+    constructor(private router: Router, private menuService: MenuService) {
+    }
 
-  ngOnInit() {
-    this.menuService.visibilityChanged.subscribe((visible) => {
-      this.visible = visible;
-    });
-  }
+    ngOnInit() {
+        this.menuService.visibilityChanged.subscribe((visible) => {
+            this.visible = visible;
+        });
+    }
 
-  ngOnDestroy() {
+    ngOnDestroy() {
 
-  }
+    }
 }

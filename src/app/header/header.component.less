@@ -1,7 +1,20 @@
 @import '../../../semantic/src/themes/default/globals/site.variables';
 
-.header {
+.headerpush, .header {
   height: 140px;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background-color: transparent;
+  transition: background-color 0.5s;
+
+  &.opaque {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid #eaeaea;
+  }
 }
 
 .logo {

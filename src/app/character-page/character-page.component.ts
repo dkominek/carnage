@@ -14,18 +14,29 @@ export class CharacterPageComponent implements OnInit {
     error = false;
     storyExpanded = false;
 
-    constructor(private route: ActivatedRoute, private router: Router, private characterService: CharacterService, private playerService: PlayerService) {
-    }
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        private characterService: CharacterService,
+        private playerService: PlayerService
+    ) {}
 
     ngOnInit() {
-        /*if (this.playerService.getActivePlayer() == null) {
+        // todo remove comments
+        if (this.playerService.getActivePlayer() == null) {
             this.router.navigate(['/player', 'setup']);
             return;
-        }*/
+        }
 
         this.route.params.subscribe(params => {
             this.character = this.characterService.characters.find((c) => c.name.toLowerCase() === params['name'].toLowerCase());
-            this.error = (this.character == null);
+            if (this.character == null) {
+                this.router.navigate(['/devour']);
+            }
         });
+    }
+
+    addToCart() {
+        this.playerService.getActivePlayer().cart.addCharacter(this.character);
     }
 }

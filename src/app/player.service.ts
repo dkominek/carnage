@@ -209,7 +209,7 @@ export class Cart {
         });
     }
 
-    addCharacter(character: Character, quantity: number) {
+    addCharacter(character: Character, quantity: number = 1) {
         if (quantity < 1) {
             throw new Error('Cannot add a character with zero quantity.');
         }

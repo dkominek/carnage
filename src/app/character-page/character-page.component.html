@@ -18,7 +18,7 @@
             </div>
             <div class="sixteen wide tablet mobile only column">
                 <div id="small-image">
-                    <img src="/assets/characters/{{character?.name.toLowerCase()}}.svg" />
+                    <img src="/assets/characters/{{character?.nameLowercase}}.svg" />
                 </div>
             </div>
             <div class="sixteen wide column">
@@ -28,7 +28,7 @@
                             <span class="header">Story</span>
                             <div class="description">
                                 <p *ngIf="character?.story == null">This character does not have a story yet...</p>
-                                <p id="story-text" [ngClass]="{ expanded: storyExpanded }" *ngIf="character?.story != null">{{storyExpanded ? character?.story : character?.story?.slice(0, 100)}}</p>
+                                <p id="story-text" [ngClass]="{ expanded: storyExpanded }" *ngIf="character?.story != null">{{storyExpanded ? character?.story : character?.storyShort}}</p>
                             </div>
                             <div *ngIf="character?.story?.length > 200" class="extra" (click)="storyExpanded = !storyExpanded">
                                 Show {{storyExpanded ? 'less' : 'more'}}...
@@ -86,7 +86,7 @@
         </div>
         <div>
             <button class="ui orange button right floated">Add To Cart</button>
-            <button class="ui blue button right floated">${{character?.price}}</button>
+            <button class="ui blue button right floated" (click)="addToCart()">${{character?.priceString}}</button>
         </div>
     </div>
     <div class="eight wide large screen computer only column">

@@ -1,3 +1,27 @@
-<p>
-  select-characters works!
-</p>
+<div class="ui container">
+  <div class="ui grid">
+    <div class="ui sixteen wide column">
+      <h3 class="ui header">Claim your slaughter</h3>
+      <ul class="filters container">
+        <li class="filter"><a (click)="toggleFilter('drink')"><img src="/assets/icons/drink.svg"/></a></li>
+        <li class="filter"><a (click)="toggleFilter('appitizer')"><img src="/assets/icons/appetizer.svg"/></a></li>
+        <li class="filter"><a (click)="toggleFilter('entree')"><img src="/assets/icons/entree.svg"/></a></li>
+        <li class="filter"><a (click)="toggleFilter('desert')"><img src="/assets/icons/dessert.svg"/></a></li>
+      </ul>
+      <ul class="filters container">
+        <li class="filter"><a (click)="toggleFilter('carnivore')"><img src="/assets/icons/carnivore.svg"/></a></li>
+        <li class="filter"><a (click)="toggleFilter('herbivore')"><img src="/assets/icons/herbivore.svg"/></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ui five column grid stackable">
+    <div *ngFor="let character of characterService.characters" class="column">
+      <div class="avatar">
+        <span class="image container" (click)="gotoCharacter(character)">
+          <img src="/assets/characters/avatar/{{character?.nameLowercase}}.png" [ngStyle]="{ transform: 'translate(' + character.avatarHorizontalOffset + ',' + character.avatarVerticalOffset + ')' }" />
+        </span>
+        <div class="name">{{character?.name}}</div>
+      </div>
+    </div>
+  </div>
+</div>

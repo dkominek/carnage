@@ -19,6 +19,21 @@ export class CharacterService {
             CharacterSubtype.CARNIVORE, 9.99,
             null,
             34, 57, 91, 45)
+        new Appetizer(
+            'Boneless Wings',
+            CharacterSubtype.CARNIVORE, 9.99,
+            null,
+            73, 49, 23, 58),
+        new Dessert(
+            'Cake',
+            CharacterSubtype.CARNIVORE, 9.99,
+            null,
+            73, 49, 23, 58),
+        new Drink(
+            'Pop',
+            CharacterSubtype.HERBIVORE, 9.99,
+            null,
+            73, 49, 23, 58),
     ];
 
     public constructor() {

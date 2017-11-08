@@ -50,7 +50,8 @@ export class AddPlayerComponent implements OnInit, OnDestroy {
     addPlayer() {
         if (this.player.name.length >= 6) {
             this.playerService.addPlayer(this.player, this.playerIndex);
-            this.router.navigate(['/player', 'setup']);
+            this.playerService.setActivePlayer(this.playerIndex);
+            this.router.navigate(['/devour']);
         }
     }
 

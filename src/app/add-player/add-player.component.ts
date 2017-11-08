@@ -22,8 +22,12 @@ export class AddPlayerComponent implements OnInit, OnDestroy {
         };
     }
 
-    constructor(private route: ActivatedRoute, private router: Router, private playerService: PlayerService, private menuService: MenuService) {
-    }
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        private playerService: PlayerService,
+        private menuService: MenuService
+    ) {}
 
     ngOnInit() {
         this.menuService.hide();
@@ -44,8 +48,10 @@ export class AddPlayerComponent implements OnInit, OnDestroy {
     }
 
     addPlayer() {
-        this.playerService.addPlayer(this.player, this.playerIndex);
-        this.router.navigate(['/player', 'setup']);
+        if (this.player.name.length >= 6) {
+            this.playerService.addPlayer(this.player, this.playerIndex);
+            this.router.navigate(['/player', 'setup']);
+        }
     }
 
     cancel() {

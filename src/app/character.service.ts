@@ -18,7 +18,7 @@ export class CharacterService {
             'Salmon',
             CharacterSubtype.CARNIVORE, 9.99,
             null,
-            34, 57, 91, 45)
+            34, 57, 91, 45),
         new Appetizer(
             'Boneless Wings',
             CharacterSubtype.CARNIVORE, 9.99,

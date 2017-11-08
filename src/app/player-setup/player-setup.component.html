@@ -19,7 +19,7 @@
                             <div class="line name">{{playerService.playerOne.name}}</div>
                             <a class="line cart link" routerLink="/cart" (click)="playerService.setActivePlayer(1)">
                                 {{playerService.playerOne.cart.items.length}} Items
-                                ({{playerService.playerOne.cart.total | currency:'USD':true}})
+                                ({{playerService.playerOne.cart.totalPrice | currency:'USD':true}})
                             </a>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                             <div class="line name">{{playerService.playerTwo.name}}</div>
                             <a class="line cart link" routerLink="/cart" (click)="playerService.setActivePlayer(2)">
                                 {{playerService.playerTwo.cart.items.length}} Items
-                                ({{playerService.playerTwo.cart.total | currency:'USD':true}})
+                                ({{playerService.playerTwo.cart.totalPrice | currency:'USD':true}})
                             </a>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                             <div class="line name">{{playerService.playerThree.name}}</div>
                             <a class="line cart link" routerLink="/cart" (click)="playerService.setActivePlayer(3)">
                                 {{playerService.playerThree.cart.items.length}} Items
-                                ({{playerService.playerThree.cart.total | currency:'USD':true}})
+                                ({{playerService.playerThree.cart.totalPrice | currency:'USD':true}})
                             </a>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                             <div class="line name">{{playerService.playerFour.name}}</div>
                             <a class="line cart link" routerLink="/cart" (click)="playerService.setActivePlayer(4)">
                                 {{playerService.playerFour.cart.items.length}} Items
-                                ({{playerService.playerFour.cart.total | currency:'USD':true}})
+                                ({{playerService.playerFour.cart.totalPrice | currency:'USD':true}})
                             </a>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                             <div class="line name">{{playerService.playerFive.name}}</div>
                             <a class="line cart link" routerLink="/cart" (click)="playerService.setActivePlayer(5)">
                                 {{playerService.playerFive.cart.items.length}} Items
-                                ({{playerService.playerFive.cart.total | currency:'USD':true}})
+                                ({{playerService.playerFive.cart.totalPrice | currency:'USD':true}})
                             </a>
                         </div>
                     </div>

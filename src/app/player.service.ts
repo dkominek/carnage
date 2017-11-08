@@ -200,12 +200,15 @@ export class Player {
 export class Cart {
 
     readonly items: CartItem[] = [];
-    total = 0;
+    totalPrice = 0;
+    totalQuantity = 0;
 
     private calculateTotal() {
-        this.total = 0;
+        this.totalPrice = 0;
+        this.totalQuantity = 0;
         this.items.forEach((item) => {
-            this.total += item.character.price * item.quantity;
+            this.totalPrice += item.character.price * item.quantity;
+            this.totalQuantity += item.quantity;
         });
     }
 

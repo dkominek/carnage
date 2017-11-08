@@ -85,13 +85,13 @@
             </div>
         </div>
         <div>
-            <button class="ui orange button right floated">Add To Cart</button>
-            <button class="ui blue button right floated" (click)="addToCart()">${{character?.priceString}}</button>
+            <button class="ui orange button right floated" (click)="addToCart()">Add To Cart</button>
+            <button class="ui blue button right floated">{{character?.priceString}}</button>
         </div>
     </div>
     <div class="eight wide large screen computer only column">
         <div id="large-image">
-            <img src="/assets/characters/{{character?.name?.toLowerCase()}}.svg" />
+            <img src="/assets/characters/{{character?.nameLowercase}}.svg" />
         </div>
     </div>
 </div>

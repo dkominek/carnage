@@ -7,6 +7,7 @@
 	.st1{fill:#1B1464;stroke:#FFFFFF;stroke-width:12;stroke-miterlimit:10;}
 	.st2{fill:#1B1464;stroke:#FFFFFF;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st3{fill:#FFFFFF;stroke:#1B1464;stroke-width:8;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#1B1464;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 </style>
 <g>
 	<path class="st0" d="M39.3,480.9L480.9,39.3c5.6-5.6,5.6-14.6,0-20.2l0,0c-5.6-5.6-14.6-5.6-20.2,0L19.1,460.7
@@ -22,9 +23,10 @@
 		<ellipse transform="matrix(0.2021 -0.9794 0.9794 0.2021 106.0584 453.3686)" class="st1" cx="331.3" cy="161.6" rx="94.9" ry="94.9"/>
 </g>
 <g>
-	<path class="st3" d="M327.7,272c0,0,18.6-47,72.2-40.9s67.5,34.2,67.5,34.2s28.4,33.6,1.7,83.2c0,0-17.4,32.2-73.6,44.6
-		s-69.9,23.2-69.9,23.2s-16.5,10.7-15.4,31.3c1.2,21.2-7.2,26.1-7.2,26.1s-30.7,23.8-44.6-17.4c0,0-32.5-0.3-27.3-34.5
-		c0,0,6.7-22.9,31.3-16.5c0,0,20.6,10.7,29.3-19.4C300.5,355.8,319.5,285.9,327.7,272z"/>
-	<path class="st0" d="M344.8,286.8c0,0,15.9-43.8,74.2-33c0,0-45.1,4-73.3,32.3"/>
+	<path class="st3" d="M232.1,413.6c9.6,68.7,81.1,66.6,81.1,66.6c201.8,6.2,165.4-261,165.4-261c-26,58.2-125.8,71.8-125.8,71.8
+		S218.6,316.9,232.1,413.6z"/>
+	<path class="st4" d="M286.2,431.3c0,0,121.7-37.4,162.2-136.2"/>
+	<path class="st4" d="M349.6,401.7c0,0-19.7-24.5-7.2-56.8"/>
+	<path class="st4" d="M394.5,368.9c0,0,23.8,5.2,45.6-5.8"/>
 </g>
 </svg>

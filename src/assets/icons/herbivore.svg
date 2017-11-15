@@ -1,1 +1,16 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><defs><style>.cls-1{fill:#1b1464;}.cls-2{fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:5px;}</style></defs><title>herbivore</title><path class="cls-1" d="M19.525,368.723C37.37,496.388,170.25,492.4,170.25,492.4,545.132,503.99,477.5,7.368,477.5,7.368,429.189,115.582,243.681,140.7,243.681,140.7S-5.6,189.012,19.525,368.723Z"/><path class="cls-2" d="M120.009,401.574S346.1,332.008,421.46,148.432"/><path class="cls-2" d="M237.767,346.649s-36.6-45.559-13.41-105.462"/><path class="cls-2" d="M321.232,285.706S365.421,295.293,406,275"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#1B1464;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<g>
+	<path class="st0" d="M19.5,368.7c17.8,127.7,150.7,123.7,150.7,123.7C545.1,504,477.5,7.4,477.5,7.4
+		c-48.3,108.2-233.8,133.3-233.8,133.3S-5.6,189,19.5,368.7z"/>
+	<path class="st1" d="M120,401.6c0,0,226.1-69.6,301.5-253.1"/>
+	<path class="st1" d="M237.8,346.6c0,0-36.6-45.6-13.4-105.5"/>
+	<path class="st1" d="M321.2,285.7c0,0,44.2,9.6,84.8-10.7"/>
+</g>
+</svg>

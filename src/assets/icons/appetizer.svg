@@ -1,1 +1,20 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><defs><style>.cls-1{fill:#1b1464;}.cls-2{fill:#fff;stroke:#1b1464;stroke-miterlimit:10;stroke-width:10px;}</style></defs><title>app</title><rect class="cls-1" x="-75.865" y="235.699" width="653.124" height="28.567" rx="8.852" ry="8.852" transform="translate(-103.336 250.488) rotate(-45)"/><circle class="cls-2" cx="130.316" cy="370.363" r="70.666"/><circle class="cls-2" cx="371.078" cy="129.601" r="70.666"/><rect class="cls-1" x="185.919" y="183.254" width="131.506" height="131.506" rx="10.536" ry="10.536" transform="translate(249.788 -105.027) rotate(45)"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#1B1464;}
+	.st1{fill:#FFFFFF;stroke:#1B1464;stroke-width:10;stroke-miterlimit:10;}
+	.st2{fill:#1B1464;stroke:#FFFFFF;stroke-width:12;stroke-miterlimit:10;}
+	.st3{fill:#1B1464;stroke:#FFFFFF;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<path class="st0" d="M39.3,480.9L480.9,39.3c5.6-5.6,5.6-14.6,0-20.2l0,0c-5.6-5.6-14.6-5.6-20.2,0L19.1,460.7
+	c-5.6,5.6-5.6,14.6,0,20.2l0,0C24.6,486.5,33.7,486.5,39.3,480.9z"/>
+<ellipse transform="matrix(0.2021 -0.9794 0.9794 0.2021 -236.1411 431.3331)" class="st2" cx="146.6" cy="360.6" rx="72.8" ry="72.8"/>
+<g>
+	<polygon class="st3" points="164,356.7 133.9,246.9 202.7,165.8 237.8,276.7 	"/>
+	<polygon class="st3" points="237.8,276.7 345.2,298.8 305.8,187.1 202.7,165.8 	"/>
+	<polygon class="st3" points="164,356.7 237.8,276.7 345.2,298.8 262.7,377 	"/>
+</g>
+<ellipse transform="matrix(0.2021 -0.9794 0.9794 0.2021 106.0584 453.3686)" class="st2" cx="331.3" cy="161.6" rx="94.9" ry="94.9"/>
+</svg>

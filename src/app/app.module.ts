@@ -12,11 +12,12 @@ import { PlayerService } from './player.service';
 import { AddPlayerComponent } from './add-player/add-player.component';
 import { HeaderComponent } from './header/header.component';
 import { PlayerIndicatorComponent } from './player-indicator/player-indicator.component';
-import { MenuService } from './menu.service';
 import { SelectCharactersComponent } from './select-characters/select-characters.component';
 import { ViewGamesComponent } from './view-games/view-games.component';
 import { PlayerCartComponent } from './player-cart/player-cart.component';
 import { CharacterAvatarComponent } from './character-avatar/character-avatar.component';
+import { DiscoverService } from './discover.service';
+import { ImagePreloaderService } from './image-preloader.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { CharacterAvatarComponent } from './character-avatar/character-avatar.co
       HttpModule,
       RoutingModule
   ],
-  providers: [CharacterService, PlayerService, MenuService],
+  providers: [CharacterService, PlayerService, DiscoverService, ImagePreloaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

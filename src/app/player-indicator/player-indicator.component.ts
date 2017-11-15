@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Player, PlayerService} from '../player.service';
-import {MenuService} from "../menu.service";
 
 @Component({
   selector: 'app-player-indicator',
@@ -22,15 +21,11 @@ export class PlayerIndicatorComponent implements OnInit {
     };
   }
 
-  constructor(private playerService: PlayerService, private menuService: MenuService) { }
+  constructor(private playerService: PlayerService) { }
 
   ngOnInit() {
     this.playerService.activePlayerChanged.subscribe((newPlayer) => {
         this.player = newPlayer;
-    });
-
-    this.menuService.visibilityChanged.subscribe((visible) => {
-      this.visible = visible;
     });
   }
 }

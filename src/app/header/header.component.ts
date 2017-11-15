@@ -1,6 +1,6 @@
 import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {MenuService} from '../menu.service';
+import {PlayerService} from '../player.service';
 
 @Component({
     selector: 'app-header',
@@ -16,12 +16,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.isScrolled = currPos > 0;
     }
 
-    constructor(private router: Router, private menuService: MenuService) {
+    constructor(private router: Router, private playerService: PlayerService) {
     }
 
     ngOnInit() {
-        this.menuService.visibilityChanged.subscribe((visible) => {
-            this.visible = visible;
+        this.visible = this.playerService.getActivePlayer() != null;
+        this.playerService.activePlayerChanged.subscribe((activePlayer) => {
+            this.visible = activePlayer != null;
         });
     }
 

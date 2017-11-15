@@ -1,14 +1,13 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Player, PlayerService} from '../player.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {MenuService} from '../menu.service';
 
 @Component({
     selector: 'app-add-player',
     templateUrl: './add-player.component.html',
     styleUrls: ['./add-player.component.less']
 })
-export class AddPlayerComponent implements OnInit, OnDestroy {
+export class AddPlayerComponent implements OnInit {
     player: Player;
     playerIndex: number;
 
@@ -25,12 +24,10 @@ export class AddPlayerComponent implements OnInit, OnDestroy {
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private playerService: PlayerService,
-        private menuService: MenuService
+        private playerService: PlayerService
     ) {}
 
     ngOnInit() {
-        this.menuService.hide();
         this.playerService.unsetActivePlayer();
         this.route.params.subscribe((params) => {
             const playerIndex = +params['number'];
@@ -41,10 +38,6 @@ export class AddPlayerComponent implements OnInit, OnDestroy {
             this.playerIndex = playerIndex;
             this.player = new Player('');
         });
-    }
-
-    ngOnDestroy(): void {
-        this.menuService.show();
     }
 
     addPlayer() {

@@ -1,21 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import {PlayerService} from '../player.service';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {DiscoverService, DiscoverVideo} from '../discover.service';
 
 @Component({
-  selector: 'app-view-games',
-  templateUrl: './view-games.component.html',
-  styleUrls: ['./view-games.component.less']
+    selector: 'app-view-games',
+    templateUrl: './view-games.component.html',
+    styleUrls: ['./view-games.component.less']
 })
 export class ViewGamesComponent implements OnInit {
 
-  constructor(private router: Router, private playerService: PlayerService) { }
+    protected selectedVideo: DiscoverVideo;
 
-  ngOnInit() {
-      if (this.playerService.getActivePlayer() == null) {
-          this.router.navigate(['/player', 'setup']);
-          return;
-      }
-  }
+    constructor(private router: Router, protected discoverService: DiscoverService) {
+    }
 
+    ngOnInit() {
+
+    }
 }

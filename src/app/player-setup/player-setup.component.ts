@@ -1,25 +1,19 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {Player, PlayerService} from '../player.service';
-import {MenuService} from '../menu.service';
+import {PlayerService} from '../player.service';
 
 @Component({
     selector: 'app-player-setup',
     templateUrl: './player-setup.component.html',
     styleUrls: ['./player-setup.component.less']
 })
-export class PlayerSetupComponent implements OnInit, OnDestroy {
+export class PlayerSetupComponent implements OnInit {
 
-    constructor(private router: Router, protected playerService: PlayerService, private menuService: MenuService) {
+    constructor(private router: Router, protected playerService: PlayerService) {
     }
 
     ngOnInit() {
-        this.menuService.hide();
         this.playerService.unsetActivePlayer();
-    }
-
-    ngOnDestroy() {
-        this.menuService.show();
     }
 
     addOrSelectPlayer(playerIndex: number) {

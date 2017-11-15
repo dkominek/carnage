@@ -1,3 +1,25 @@
-<p>
-  view-games works!
-</p>
+<div class="ui container">
+    <div *ngIf="selectedVideo != null" class="ui two column grid">
+        <div class="column">
+            <iframe [src]='selectedVideo.videoUrl'
+                    frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
+        <div class="column">
+            <h3>{{selectedVideo.title}}</h3>
+            <p>{{selectedVideo.description}}</p>
+        </div>
+    </div>
+
+    <h3>Videos</h3>
+    <div class="ui grid">
+        <div class=" sixteen wide mobile eight wide tablet four wide computer column video"
+             [attr.title]="video.title"
+             *ngFor="let video of discoverService.videos">
+            <div class="surround" [ngClass]="{ selected: selectedViceo === video }">
+                <img [src]="video.imageUrl" (click)="selectedVideo = video">
+                <div class="name">{{video.title}}</div>
+            </div>
+        </div>
+    </div>
+</div>

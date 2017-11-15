@@ -88,6 +88,8 @@ export abstract class Character {
 
     abstract get type(): string;
 
+    abstract get typeSafe(): string;
+
     abstract get descriptorOne(): string;
 
     abstract get descriptorTwo(): string;
@@ -100,6 +102,10 @@ export abstract class Character {
 export class Appetizer extends Character {
     get type(): string {
         return CharacterType.APPETIZER;
+    }
+
+    get typeSafe(): string {
+        return this.type;
     }
 
     get descriptorOne(): string {
@@ -124,6 +130,10 @@ export class Drink extends Character {
         return CharacterType.DRINK;
     }
 
+    get typeSafe(): string {
+        return this.type;
+    }
+
     get descriptorOne(): string {
         return 'Descriptor One';
     }
@@ -146,6 +156,10 @@ export class Entree extends Character {
         return CharacterType.ENTREE;
     }
 
+    get typeSafe(): string {
+        return 'Entree';
+    }
+
     get descriptorOne(): string {
         return 'Descriptor One';
     }
@@ -166,6 +180,10 @@ export class Entree extends Character {
 export class Dessert extends Character {
     get type(): string {
         return CharacterType.DESSERT;
+    }
+
+    get typeSafe(): string {
+        return this.type;
     }
 
     get descriptorOne(): string {

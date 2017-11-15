@@ -2,10 +2,10 @@
     <div class="eight wide computer sixteen wide tablet column">
         <div class="ui grid">
             <div class="sixteen wide column">
-                <div class="ui items" id="name-type">
+                <div class="ui items unstackable" id="name-type">
                     <div class="item">
                         <div class="image">
-                            <img [attr.src]="'/assets/icons/' + character?.type?.toLowerCase() + '-' + character?.subtype?.toLowerCase() + '.svg'"/>
+                            <img [attr.src]="'/assets/icons/' + character?.typeSafe?.toLowerCase() + '-' + character?.subtype?.toLowerCase() + '.svg'"/>
                         </div>
                         <div class="content">
                             <span class="header">{{character?.name}}</span>
@@ -82,16 +82,24 @@
                         </div>
                     </div>
                 </div>
+                <div class="ui items" id="price">
+                    <div class="item">
+                        <div class="content">
+                            <button class="ui orange button right floated" (click)="addToCart()">Add To Cart</button>
+                            <h3 class="ui header">Price: <span class="blue">{{character?.priceString}}</span></h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div>
-            <button class="ui orange button right floated" (click)="addToCart()">Add To Cart</button>
-            <button class="ui blue button right floated">{{character?.priceString}}</button>
-        </div>
     </div>
-    <div class="eight wide large screen computer only column">
+    <div class="eight wide column mobile hidden tablet hidden">
         <div id="large-image">
             <img src="/assets/characters/{{character?.nameLowercase}}.svg" />
         </div>
     </div>
+</div>
+<div class="secondary action">
+    <button class="ui button huge" (click)="gotoCharacterSelect()"><i class="fa fa-fw fa-chevron-left"></i>Browse Menu</button>
+    <button class="ui button huge" [disabled]="false">Call Server</button>
 </div>

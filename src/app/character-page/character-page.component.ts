@@ -36,7 +36,11 @@ export class CharacterPageComponent implements OnInit {
         });
     }
 
-    addToCart() {
+    protected addToCart() {
         this.playerService.getActivePlayer().cart.addCharacter(this.character);
+    }
+
+    protected gotoCharacterSelect() {
+        this.router.navigate(['/devour']);
     }
 }

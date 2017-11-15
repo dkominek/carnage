@@ -7,7 +7,7 @@
         </div>
         <div class="column">
             <h3>{{selectedVideo.title}}</h3>
-            <p>{{selectedVideo.description}}</p>
+            <pre style="width: 100%; white-space: pre-wrap; font-family: 'Nexa', sans-serif;">{{selectedVideo.description}}</pre>
         </div>
     </div>
 
@@ -22,4 +22,7 @@
             </div>
         </div>
     </div>
+</div>
+<div class="secondary action">
+    <button class="ui button huge" (click)="null">Call Server</button>
 </div>

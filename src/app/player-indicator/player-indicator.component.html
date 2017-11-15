@@ -1,4 +1,4 @@
-<div *ngIf="player != null && visible" class="player">
+<div *ngIf="player != null && visible" class="player tablet hidden mobile hidden">
   <div class="details">
     <div class="line name">{{player.name}}</div>
     <a class="line cart link" routerLink="/player/cart">{{player.cart.totalQuantity}} Items ({{player.cart.totalPrice | currency:'USD':true}})</a>

@@ -51,6 +51,10 @@ export class SelectCharactersComponent implements OnInit {
         this.router.navigate(['/character', character.nameLowercase]);
     }
 
+    protected gotoPlayerSelect() {
+        this.router.navigate(['/player/setup']);
+    }
+
     protected filterCharacters() {
         this.characters = [];
         const typeFilters = [];

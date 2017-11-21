@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {PlayerService} from '../player.service';
+import {ButtonIconPosition, ButtonType, ToolbarService} from '../toolbar.service';
 
 @Component({
     selector: 'app-player-setup',
@@ -9,10 +10,17 @@ import {PlayerService} from '../player.service';
 })
 export class PlayerSetupComponent implements OnInit {
 
-    constructor(private router: Router, protected playerService: PlayerService) {
+    constructor(private router: Router, protected playerService: PlayerService, protected toolbarService: ToolbarService) {
     }
 
     ngOnInit() {
+        this.toolbarService.addButton({
+            text: 'Ready to Order',
+            icon: 'chevron-right',
+            iconPosition: ButtonIconPosition.Right,
+            callback: () => {},
+            type: ButtonType.Primary
+        });
         this.playerService.unsetActivePlayer();
     }
 

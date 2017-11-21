@@ -39,46 +39,6 @@ body {
   color: #ff5500;
 }
 
-.primary.action, .secondary.action {
-  .ui.button {
-    display: inline-block;
-    margin-right: 10px;
-    width: auto;
-    background: #fff !important;
-    border: 1px solid #1b1464 !important;
-    color: #1b1464 !important;
-
-    &:hover {
-      background: #1b1464 !important;
-      color: #fff !important;
-    }
-
-    i.fa.fa-fw {
-      margin-right: 10px;
-    }
-  }
-}
-
-@media only screen and (min-width: @tabletBreakpoint) {
-  .primary.action {
-    position: absolute;
-    right: 100px;
-    bottom: 50px;
-  }
-
-  .secondary.action {
-    position: absolute;
-    left: 100px;
-    bottom: 50px;
-  }
-}
-
-@media only screen and (max-width: @tabletBreakpoint) {
-  .primary.action, .secondary.action {
-    padding: 20px 30px 20px;
-  }
-}
-
 // Semantic UI has these classes, however they're only applicable to
 // grids, containers, rows and columns.
 // plus, there isn't any `mobile hidden`, `X hidden` class.

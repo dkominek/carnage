@@ -1,5 +1,5 @@
 <div class="ui container">
-  <div class="ui items">
+  <div *ngIf="player.cart.items.length > 0; else noItems" class="ui items unstackable">
     <div class="item">
       <a class="image"></a>
       <div class="middle aligned content">
@@ -44,4 +44,9 @@
       </div>
     </div>
   </div>
+  <ng-template #noItems>
+    <div class="ui basic center aligned segment">
+      <h3 class="centered">You haven't selected any food items...</h3>
+    </div>
+  </ng-template>
 </div>

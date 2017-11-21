@@ -5,7 +5,7 @@
                 <div class="ui items unstackable" id="name-type">
                     <div class="item">
                         <div class="image">
-                            <img [attr.src]="'/assets/icons/' + character?.typeSafe?.toLowerCase() + '-' + character?.subtype?.toLowerCase() + '.svg'"/>
+                            <img [attr.src]="character?.iconUrl"/>
                         </div>
                         <div class="content">
                             <span class="header">{{character?.name}}</span>
@@ -18,7 +18,7 @@
             </div>
             <div class="sixteen wide tablet mobile only column">
                 <div id="small-image">
-                    <img src="/assets/characters/{{character?.nameLowercase}}.svg" />
+                    <img [attr.src]="character?.imageUrl" />
                 </div>
             </div>
             <div class="sixteen wide column">
@@ -33,6 +33,13 @@
                             <div *ngIf="character?.story?.length > 200" class="extra" (click)="storyExpanded = !storyExpanded">
                                 Show {{storyExpanded ? 'less' : 'more'}}...
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui items" id="price">
+                    <div class="item">
+                        <div class="content">
+                            <h3 class="ui header">Price: <span class="blue">{{character?.priceString}}</span></h3>
                         </div>
                     </div>
                 </div>
@@ -82,24 +89,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="ui items" id="price">
-                    <div class="item">
-                        <div class="content">
-                            <button class="ui orange button right floated" (click)="addToCart()">Add To Cart</button>
-                            <h3 class="ui header">Price: <span class="blue">{{character?.priceString}}</span></h3>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
+        <a class="next" (click)="navigateNext()">
+            <i class="fa fa-chevron-right"></i>
+        </a>
+        <a class="previous" (click)="navigatePrevious()">
+            <i class="fa fa-chevron-left"></i>
+        </a>
     </div>
     <div class="eight wide column mobile hidden tablet hidden">
         <div id="large-image">
-            <img src="/assets/characters/{{character?.nameLowercase}}.svg" />
+            <img [attr.src]="character?.imageUrl" />
         </div>
     </div>
-</div>
-<div class="secondary action">
-    <button class="ui button huge" (click)="gotoCharacterSelect()"><i class="fa fa-fw fa-chevron-left"></i>Browse Menu</button>
-    <button class="ui button huge" [disabled]="false">Call Server</button>
 </div>

@@ -10,16 +10,11 @@
         </div>
         <div class="fourteen wide tablet six wide computer column centered">
             <div class="ui input" id="player-name">
-                <input autofocus type="text" name="player-name" [(ngModel)]="player.name" placeholder="Enter a gamertag..." (keyup.enter)="addPlayer()"/>
+                <input autofocus type="text" name="player-name" [ngModel]="player.name" (ngModelChange)="setPlayerName($event)" placeholder="Enter a gamertag..." (keyup.enter)="addPlayer()"/>
+                <span class="error">{{errorMessage}}</span>
             </div>
             <p class="line">Your gamertag will be your online persona.</p>
             <p class="line">It is who you are as a gamer.</p>
         </div>
-    </div>
-    <div class="primary action">
-        <button class="ui button huge" (click)="addPlayer()" [disabled]="player.name.length < 6">Add</button>
-    </div>
-    <div class="secondary action">
-        <button class="ui button huge" (click)="cancel()">Cancel</button>
     </div>
 </div>

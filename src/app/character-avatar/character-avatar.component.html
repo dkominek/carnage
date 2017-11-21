@@ -1,6 +1,6 @@
 <div class="avatar" [ngClass]="{ nohover: noHover }">
   <span class="image container">
-    <img src="/assets/characters/avatar/{{character?.nameLowercase}}.png"
+    <img [attr.src]="character?.avatarUrl"
          [ngStyle]="{ transform: 'translate(' + character?.avatarHorizontalOffset + ',' + character?.avatarVerticalOffset + ')' }"/>
   </span>
   <div class="name" [ngClass]="{ active: alwaysShowName }">{{character?.name}}</div>

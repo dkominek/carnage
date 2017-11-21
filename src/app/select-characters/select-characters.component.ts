@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {PlayerService} from '../player.service';
 import {Router} from '@angular/router';
 import {Character, CharacterService, CharacterSubtype, CharacterType} from '../character.service';
+import {ButtonType, ToolbarService} from "../toolbar.service";
 
 @Component({
     selector: 'app-select-characters',
@@ -13,10 +14,26 @@ export class SelectCharactersComponent implements OnInit {
     protected filters: string[] = [];
     protected characters: Character[] = [];
 
-    constructor(private router: Router, private playerService: PlayerService, protected characterService: CharacterService) {
-    }
+    constructor(
+        private router: Router,
+        private playerService: PlayerService,
+        protected characterService: CharacterService,
+        protected toolbarService: ToolbarService
+    ) {}
 
     ngOnInit() {
+        this.toolbarService.addButton({
+            text: 'Select Player',
+            icon: 'chevron-left',
+            callback: this.gotoPlayerSelect.bind(this),
+            type: ButtonType.Secondary
+        });
+        this.toolbarService.addButton({
+            text: 'Call Server',
+            icon: 'phone',
+            callback: () => {},
+            type: ButtonType.Secondary
+        });
         if (this.playerService.getActivePlayer() == null) {
             this.router.navigate(['/player', 'setup']);
             return;

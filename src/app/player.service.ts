@@ -1,5 +1,6 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import {Character} from './character.service';
+import {environment} from '../environments/environment';
 
 @Injectable()
 export class PlayerService {
@@ -32,6 +33,9 @@ export class PlayerService {
     public activePlayerChanged: EventEmitter<Player> = new EventEmitter<Player>();
 
     constructor() {
+        if (environment.production === false) {
+            this.addPlayer(new Player('Test Customer'), 1);
+        }
     }
 
     addPlayer(player: Player, index: number) {
@@ -178,8 +182,8 @@ export class Player {
 
     private _name = '';
     set name(value: string) {
-        this._name = value;
-        this._shortName = value.slice(0, 2);
+        this._name = value.trim();
+        this.setShortName();
     }
     get name(): string {
         return this._name;
@@ -194,6 +198,21 @@ export class Player {
         name: string
     ) {
         this.name = name;
+    }
+
+    private setShortName() {
+        let name = this._name.replace(/[^A-Za-z0-9\s._\-]/g, '');
+        const words = name.split(/(?=[A-Z])|(?:[\s._\-])/g).filter(n => n);
+        name = name.replace(/[\s._\-]/g, '');
+        if (words.length >= 2 && words[0].length > 0 && words[1].length > 0) {
+            this._shortName = words[0].slice(0, 1).toUpperCase() + words[1].slice(0, 1).toLowerCase();
+        } else if (name.length >= 2) {
+            this._shortName = name.slice(0, 1).toUpperCase() + name.slice(1, 2).toLowerCase();
+        } else if (name.length === 1) {
+            this._shortName = name.slice(0, 1).toUpperCase() + '-';
+        } else {
+            this._shortName = '--';
+        }
     }
 }
 

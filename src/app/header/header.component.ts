@@ -1,4 +1,4 @@
-import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {PlayerService} from '../player.service';
 
@@ -7,11 +7,12 @@ import {PlayerService} from '../player.service';
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.less']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit {
     protected isScrolled = false;
     protected visible = true;
 
-    @HostListener('window:scroll') onWindowScroll(evt) {
+    @HostListener('window:scroll')
+    onWindowScroll(evt) {
         const currPos = window.pageYOffset;
         this.isScrolled = currPos > 0;
     }
@@ -28,5 +29,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
 
+    }
+
+    ngAfterViewInit() {
+        this.onWindowScroll(null);
     }
 }

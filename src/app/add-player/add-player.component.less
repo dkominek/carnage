@@ -7,11 +7,10 @@ h1.ui.header {
 .avatar {
   border: 5px solid #eaeaea;
   border-radius: 50%;
-  width: 400px;
-  height: 400px;
+  width: 250px;
+  height: 250px;
   text-align: center;
   background: #fff;
-  font-size: 100px;
   margin: 5px auto 20px;
 
   &.one {
@@ -31,7 +30,7 @@ h1.ui.header {
   }
 
   .name {
-    font-size: 150px;
+    font-size: 100px;
     line-height: 1;
     font-weight: 400;
     position: absolute;
@@ -46,11 +45,18 @@ h1.ui.header {
   width: 100%;
   margin: auto;
   margin-bottom: 2em;
+  position: relative;
   input {
     font-size: 20px;
     border: 2px solid #a1a1a1;
     color: #1b1464;
     border-radius: 0;
+  }
+  span.error {
+    position: absolute;
+    bottom: -25px;
+    left: 10px;
+    color: #F900FD;
   }
 }
 
@@ -60,11 +66,4 @@ h1.ui.header {
   margin-bottom: 0.5em;
   color: #1b1464;
   font-family: "Corbel", sans-serif;
-}
-
-@media only screen and (max-width: @tabletBreakpoint) {
-  .avatar {
-    width: 300px;
-    height: 300px;
-  }
 }

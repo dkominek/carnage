@@ -1,0 +1,21 @@
+<div *ngIf="toolbarService.buttonCount > 0" class="toolbar" [ngClass]="{ opaque: isScrolled }">
+  <div class="primary action">
+    <ng-template ngFor let-button [ngForOf]="toolbarService.primaryButtons">
+      <button class="ui button huge" (click)="button.callback()" [disabled]="button.disabled">
+        <i *ngIf="button.icon != null && button.iconPosition === buttonIconPosition.Left" class="fa fa-fw fa-{{button.icon}}"></i>
+        {{button.text}}
+        <i *ngIf="button.icon != null && button.iconPosition === buttonIconPosition.Right" class="fa fa-fw fa-{{button.icon}} right"></i>
+      </button>
+    </ng-template>
+  </div>
+  <div class="secondary action">
+    <ng-template ngFor let-button [ngForOf]="toolbarService.secondaryButtons">
+      <button class="ui button huge" (click)="button.callback()" [disabled]="button.disabled">
+        <i *ngIf="button.icon != null && button.iconPosition === buttonIconPosition.Left" class="fa fa-fw fa-{{button.icon}}"></i>
+        {{button.text}}
+        <i *ngIf="button.icon != null && button.iconPosition === buttonIconPosition.Right" class="fa fa-fw fa-{{button.icon}} right"></i>
+      </button>
+    </ng-template>
+  </div>
+</div>
+<!--div class="toolbarpush"></div-->

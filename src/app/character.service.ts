@@ -86,6 +86,18 @@ export abstract class Character {
         this.storyShort = story != null ? story.slice(0, 100).trim() + '...' : null;
     }
 
+    get iconUrl(): string {
+        return '/assets/icons/' + this.typeSafe.toLowerCase() + '-' + this.subtype.toLowerCase() + '.svg';
+    }
+
+    get avatarUrl(): string {
+        return '/assets/characters/avatar/' + this.nameLowercase + '.png';
+    }
+
+    get imageUrl(): string {
+        return '/assets/characters/' + this.nameLowercase + '.svg';
+    }
+
     abstract get type(): string;
 
     abstract get typeSafe(): string;

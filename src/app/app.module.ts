@@ -18,6 +18,8 @@ import { PlayerCartComponent } from './player-cart/player-cart.component';
 import { CharacterAvatarComponent } from './character-avatar/character-avatar.component';
 import { DiscoverService } from './discover.service';
 import { ImagePreloaderService } from './image-preloader.service';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import {ToolbarService} from "./toolbar.service";
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { ImagePreloaderService } from './image-preloader.service';
       ViewGamesComponent,
       PlayerCartComponent,
       CharacterAvatarComponent,
+      ToolbarComponent,
   ],
   imports: [
       BrowserModule,
@@ -38,7 +41,7 @@ import { ImagePreloaderService } from './image-preloader.service';
       HttpModule,
       RoutingModule
   ],
-  providers: [CharacterService, PlayerService, DiscoverService, ImagePreloaderService],
+  providers: [CharacterService, PlayerService, DiscoverService, ImagePreloaderService, ToolbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

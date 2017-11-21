@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Player, PlayerService} from '../player.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {ButtonType, ToolbarService} from '../toolbar.service';
+import {Subject} from 'rxjs/Subject';
 
 @Component({
     selector: 'app-add-player',
@@ -10,6 +12,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class AddPlayerComponent implements OnInit {
     player: Player;
     playerIndex: number;
+    addDisabled: Subject<boolean> = new Subject<boolean>();
+
+    errorMessage: string = '';
 
     protected get avatarClass(): any {
         return {
@@ -24,10 +29,24 @@ export class AddPlayerComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private playerService: PlayerService
+        private playerService: PlayerService,
+        private toolbarService: ToolbarService
     ) {}
 
     ngOnInit() {
+        this.toolbarService.addButton({
+            text: 'Call Server',
+            icon: 'phone',
+            callback: () => {},
+            type: ButtonType.Secondary
+        });
+        this.toolbarService.addButton({
+            text: 'Add',
+            icon: 'plus',
+            callback: this.addPlayer.bind(this),
+            disabled: this.addDisabled,
+            type: ButtonType.Primary
+        });
         this.playerService.unsetActivePlayer();
         this.route.params.subscribe((params) => {
             const playerIndex = +params['number'];
@@ -37,7 +56,16 @@ export class AddPlayerComponent implements OnInit {
             }
             this.playerIndex = playerIndex;
             this.player = new Player('');
+            this.addDisabled.next(true);
         });
+    }
+
+    setPlayerName(name) {
+        name = name.replace(/\s/g, '');
+        this.player.name = name;
+        const length = name.length < 6;
+        this.addDisabled.next(length);
+        this.errorMessage = length ? 'Your gamer tag must be more than 6 characters...' : '';
     }
 
     addPlayer() {

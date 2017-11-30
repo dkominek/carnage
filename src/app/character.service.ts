@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class CharacterService {
+    // tslint:disable:max-line-length
     readonly characters: Character[] = [
         new Entree(
             'Hermberg',
@@ -85,6 +86,7 @@ export class CharacterService {
             'Tequila, triple sec and lime juice; salted to perfection around the rim. This Margarita is tangy and will blow you to the moon/blow your mind. (Tang is the juice for astronauts)\n',
             73, 49, 23, 58),
     ];
+    // tslint:enable:max-line-length
 
     public constructor() {
         this.characters.sort((a, b) => {
@@ -115,6 +117,8 @@ export class CharacterSubtype {
 
 export abstract class Character {
 
+    static readonly SHORT_STORY_LENGTH = 250;
+
     public nameLowercase = '';
     public priceString = '';
     public storyShort = '';
@@ -131,7 +135,11 @@ export abstract class Character {
                        public avatarVerticalOffset: string = '0px') {
         this.nameLowercase = name.toLowerCase().replace(/\s/g, '_');
         this.priceString = '$' + price.toFixed(2);
-        this.storyShort = story != null ? story.slice(0, 100).trim() + '...' : null;
+        if (story.length > Character.SHORT_STORY_LENGTH) {
+            this.storyShort = story != null ? story.slice(0, Character.SHORT_STORY_LENGTH).trim() + '...' : null;
+        } else {
+            this.storyShort = story;
+        }
     }
 
     get iconUrl(): string {
@@ -150,13 +158,21 @@ export abstract class Character {
 
     abstract get typeSafe(): string;
 
-    abstract get descriptorOne(): string;
+    abstract get descriptorOneLeft(): string;
 
-    abstract get descriptorTwo(): string;
+    abstract get descriptorOneRight(): string;
 
-    abstract get descriptorThree(): string;
+    abstract get descriptorTwoLeft(): string;
 
-    abstract get descriptorFour(): string;
+    abstract get descriptorTwoRight(): string;
+
+    abstract get descriptorThreeLeft(): string;
+
+    abstract get descriptorThreeRight(): string;
+
+    abstract get descriptorFourLeft(): string;
+
+    abstract get descriptorFourRight(): string;
 }
 
 export class Appetizer extends Character {
@@ -168,19 +184,35 @@ export class Appetizer extends Character {
         return this.type;
     }
 
-    get descriptorOne(): string {
+    get descriptorOneLeft(): string {
         return 'Descriptor One';
     }
 
-    get descriptorTwo(): string {
+    get descriptorOneRight(): string {
+        return 'Descriptor One';
+    }
+
+    get descriptorTwoLeft(): string {
         return 'Descriptor Two';
     }
 
-    get descriptorThree(): string {
+    get descriptorTwoRight(): string {
+        return 'Descriptor Two';
+    }
+
+    get descriptorThreeLeft(): string {
         return 'Descriptor Three';
     }
 
-    get descriptorFour(): string {
+    get descriptorThreeRight(): string {
+        return 'Descriptor Three';
+    }
+
+    get descriptorFourLeft(): string {
+        return 'Descriptor Four';
+    }
+
+    get descriptorFourRight(): string {
         return 'Descriptor Four';
     }
 }
@@ -194,19 +226,35 @@ export class Drink extends Character {
         return this.type;
     }
 
-    get descriptorOne(): string {
+    get descriptorOneLeft(): string {
         return 'Descriptor One';
     }
 
-    get descriptorTwo(): string {
+    get descriptorOneRight(): string {
+        return 'Descriptor One';
+    }
+
+    get descriptorTwoLeft(): string {
         return 'Descriptor Two';
     }
 
-    get descriptorThree(): string {
+    get descriptorTwoRight(): string {
+        return 'Descriptor Two';
+    }
+
+    get descriptorThreeLeft(): string {
         return 'Descriptor Three';
     }
 
-    get descriptorFour(): string {
+    get descriptorThreeRight(): string {
+        return 'Descriptor Three';
+    }
+
+    get descriptorFourLeft(): string {
+        return 'Descriptor Four';
+    }
+
+    get descriptorFourRight(): string {
         return 'Descriptor Four';
     }
 }
@@ -220,19 +268,35 @@ export class Entree extends Character {
         return 'Entree';
     }
 
-    get descriptorOne(): string {
+    get descriptorOneLeft(): string {
         return 'Descriptor One';
     }
 
-    get descriptorTwo(): string {
+    get descriptorOneRight(): string {
+        return 'Descriptor One';
+    }
+
+    get descriptorTwoLeft(): string {
         return 'Descriptor Two';
     }
 
-    get descriptorThree(): string {
+    get descriptorTwoRight(): string {
+        return 'Descriptor Two';
+    }
+
+    get descriptorThreeLeft(): string {
         return 'Descriptor Three';
     }
 
-    get descriptorFour(): string {
+    get descriptorThreeRight(): string {
+        return 'Descriptor Three';
+    }
+
+    get descriptorFourLeft(): string {
+        return 'Descriptor Four';
+    }
+
+    get descriptorFourRight(): string {
         return 'Descriptor Four';
     }
 }
@@ -246,19 +310,35 @@ export class Dessert extends Character {
         return this.type;
     }
 
-    get descriptorOne(): string {
+    get descriptorOneLeft(): string {
         return 'Descriptor One';
     }
 
-    get descriptorTwo(): string {
+    get descriptorOneRight(): string {
+        return 'Descriptor One';
+    }
+
+    get descriptorTwoLeft(): string {
         return 'Descriptor Two';
     }
 
-    get descriptorThree(): string {
+    get descriptorTwoRight(): string {
+        return 'Descriptor Two';
+    }
+
+    get descriptorThreeLeft(): string {
         return 'Descriptor Three';
     }
 
-    get descriptorFour(): string {
+    get descriptorThreeRight(): string {
+        return 'Descriptor Three';
+    }
+
+    get descriptorFourLeft(): string {
+        return 'Descriptor Four';
+    }
+
+    get descriptorFourRight(): string {
         return 'Descriptor Four';
     }
 }

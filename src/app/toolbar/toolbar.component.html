@@ -1,4 +1,4 @@
-<div class="toolbar" [ngClass]="{ opaque: isScrolled }">
+<div class="toolbar" [ngClass]="{ opaque: chatVisible || isScrolled }">
   <div class="primary action">
     <ng-template ngFor let-button [ngForOf]="toolbarService.primaryButtons">
       <button class="ui button huge" (click)="button.callback()" [disabled]="button.disabled">

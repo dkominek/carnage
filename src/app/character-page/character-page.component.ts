@@ -17,6 +17,7 @@ export class CharacterPageComponent implements OnInit {
     character: Character;
     error = false;
     storyExpanded = false;
+    shortStoryLength = Character.SHORT_STORY_LENGTH;
 
     constructor(private route: ActivatedRoute,
                 private router: Router,

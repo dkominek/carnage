@@ -30,7 +30,7 @@
                                 <p *ngIf="character?.story == null">This character does not have a story yet...</p>
                                 <p id="story-text" [ngClass]="{ expanded: storyExpanded }" *ngIf="character?.story != null">{{storyExpanded ? character?.story : character?.storyShort}}</p>
                             </div>
-                            <div *ngIf="character?.story?.length > 200" class="extra" (click)="storyExpanded = !storyExpanded">
+                            <div *ngIf="character?.story?.length > shortStoryLength" class="extra" (click)="storyExpanded = !storyExpanded">
                                 Show {{storyExpanded ? 'less' : 'more'}}...
                             </div>
                         </div>
@@ -46,7 +46,8 @@
                 <div class="ui items" id="attributes">
                     <div class="item">
                         <div class="content">
-                            <span class="header">{{character?.descriptorOne}}</span>
+                            <span>{{character?.descriptorOneLeft}}</span>
+                            <span class="ui right floated">{{character?.descriptorOneRight}}</span>
                             <div class="description">
                                 <div class="ui indicating progress">
                                     <div class="bar" [ngStyle]="{ 'width.%': character?.attributeOne }"></div>
@@ -57,7 +58,8 @@
                     </div>
                     <div class="item">
                         <div class="content">
-                            <span class="header">{{character?.descriptorTwo}}</span>
+                            <span>{{character?.descriptorTwoLeft}}</span>
+                            <span class="ui right floated">{{character?.descriptorTwoRight}}</span>
                             <div class="description">
                                 <div class="ui indicating progress">
                                     <div class="bar" [ngStyle]="{ 'width.%': character?.attributeTwo }"></div>
@@ -68,7 +70,8 @@
                     </div>
                     <div class="item">
                         <div class="content">
-                            <span class="header">{{character?.descriptorThree}}</span>
+                            <span>{{character?.descriptorThreeLeft}}</span>
+                            <span class="ui right floated">{{character?.descriptorThreeRight}}</span>
                             <div class="description">
                                 <div class="ui indicating progress">
                                     <div class="bar" [ngStyle]="{ 'width.%': character?.attributeThree }"></div>
@@ -79,7 +82,8 @@
                     </div>
                     <div class="item">
                         <div class="content">
-                            <span class="header">{{character?.descriptorFour}}</span>
+                            <span>{{character?.descriptorFourLeft}}</span>
+                            <span class="ui right floated">{{character?.descriptorFourRight}}</span>
                             <div class="description">
                                 <div class="ui indicating progress">
                                     <div class="bar" [ngStyle]="{ 'width.%': character?.attributeFour }"></div>

@@ -3,5 +3,6 @@
     <img [attr.src]="character?.avatarUrl"
          [ngStyle]="{ transform: 'translate(' + character?.avatarHorizontalOffset + ',' + character?.avatarVerticalOffset + ')' }"/>
   </span>
+  <span *ngIf="quantity > 1" class="quantity">{{quantity}}</span>
   <div class="name" [ngClass]="{ active: alwaysShowName }">{{character?.name}}</div>
 </div>

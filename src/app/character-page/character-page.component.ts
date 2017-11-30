@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Character, CharacterService} from '../character.service';
 import {PlayerService} from '../player.service';
-import {ButtonType, ToolbarService} from '../toolbar.service';
+import {ButtonIconPosition, ButtonType, ToolbarService} from '../toolbar.service';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Component({
@@ -96,13 +96,6 @@ export class CharacterPageComponent implements OnInit {
             callback: this.gotoCharacterSelect.bind(this),
             type: ButtonType.Secondary
         });
-        this.toolbarService.addButton({
-            text: 'Call Server',
-            icon: 'phone',
-            callback: () => {
-            },
-            type: ButtonType.Secondary
-        });
 
         this.addText = new BehaviorSubject<string>('');
         this.addDisabled = new BehaviorSubject<boolean>(false);
@@ -115,5 +108,15 @@ export class CharacterPageComponent implements OnInit {
         });
         this.addDisabled.next(false);
         this.addText.next('Add To Cart');
+
+        this.toolbarService.addButton({
+            text: 'Cart',
+            icon: 'shopping-cart',
+            callback: () => {
+                this.router.navigate(['/player', 'cart']);
+            },
+            iconPosition: ButtonIconPosition.Center,
+            type: ButtonType.Primary,
+        });
     }
 }

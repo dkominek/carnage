@@ -32,11 +32,11 @@ export class PlayerCartComponent implements OnInit {
       });
 
       this.toolbarService.addButton({
-          text: 'Place Order',
+          text: 'Review Order',
           icon: 'chevron-right',
           iconPosition: ButtonIconPosition.Right,
           callback: () => {
-              this.router.navigate(['devour']);
+              this.router.navigate(['/review']);
           },
           disabled: this.player.cart.items.length === 0,
           type: ButtonType.Primary

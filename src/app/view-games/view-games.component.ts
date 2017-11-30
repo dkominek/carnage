@@ -16,11 +16,5 @@ export class ViewGamesComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.toolbarService.addButton({
-            text: 'Call Server',
-            icon: 'phone',
-            callback: () => {},
-            type: ButtonType.Secondary
-        });
     }
 }

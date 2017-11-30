@@ -35,12 +35,6 @@ export class AddPlayerComponent implements OnInit {
 
     ngOnInit() {
         this.toolbarService.addButton({
-            text: 'Call Server',
-            icon: 'phone',
-            callback: () => {},
-            type: ButtonType.Secondary
-        });
-        this.toolbarService.addButton({
             text: 'Add',
             icon: 'plus',
             callback: this.addPlayer.bind(this),

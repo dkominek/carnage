@@ -1,0 +1,143 @@
+<div class="ui container">
+  <div *ngIf="totalQuantity > 0; else noItems" class="ui items unstackable">
+    <div class="item">
+      <a class="image"></a>
+      <div class="middle aligned content">
+        <a class="header"></a>
+        <div class="description">
+          <div class="ui grid">
+            <div class="twelve wide column"><h3>Meal</h3></div>
+            <div class="center aligned four wide column"><h3>Subtotal</h3></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="playerService.playerOne != null" class="cart item">
+      <div class="image">
+        <div class="player one" (click)="gotoCart(1)">
+          <span class="name">{{playerService.playerOne.shortName}}</span>
+        </div>
+        <div class="details">
+          <div class="line name">{{playerService.playerOne.name}}</div>
+        </div>
+      </div>
+      <div class="middle aligned content">
+        <div class="ui grid">
+          <div class="twelve wide column">
+            <span class="character" *ngFor="let item of playerService.playerOne.cart.items">
+              <app-character-avatar [character]="item.character" [quantity]="item.quantity"></app-character-avatar>
+            </span>
+          </div>
+          <div class="center aligned four wide column">
+            ${{totalPrice.toFixed(2)}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="playerService.playerTwo != null" class="cart item">
+      <div class="image">
+        <div class="player two" (click)="gotoCart(2)">
+          <span class="name">{{playerService.playerTwo.shortName}}</span>
+        </div>
+        <div class="details">
+          <div class="line name">{{playerService.playerTwo.name}}</div>
+        </div>
+      </div>
+      <div class="middle aligned content">
+        <div class="ui grid">
+          <div class="twelve wide column">
+            <span class="character" *ngFor="let item of playerService.playerTwo.cart.items">
+              <app-character-avatar [character]="item.character" [quantity]="item.quantity"></app-character-avatar>
+            </span>
+          </div>
+          <div class="center aligned four wide column">
+            ${{totalPrice.toFixed(2)}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="playerService.playerThree != null" class="cart item">
+      <div class="image">
+        <div class="player three" (click)="gotoCart(3)">
+          <span class="name">{{playerService.playerThree.shortName}}</span>
+        </div>
+        <div class="details">
+          <div class="line name">{{playerService.playerThree.name}}</div>
+        </div>
+      </div>
+      <div class="middle aligned content">
+        <div class="ui grid">
+          <div class="twelve wide column">
+            <span class="character" *ngFor="let item of playerService.playerThree.cart.items">
+              <app-character-avatar [character]="item.character" [quantity]="item.quantity"></app-character-avatar>
+            </span>
+          </div>
+          <div class="center aligned four wide column">
+            ${{totalPrice.toFixed(2)}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="playerService.playerFour != null" class="cart item">
+      <div class="image">
+        <div class="player four" (click)="gotoCart(4)">
+          <span class="name">{{playerService.playerFour.shortName}}</span>
+        </div>
+        <div class="details">
+          <div class="line name">{{playerService.playerFour.name}}</div>
+        </div>
+      </div>
+      <div class="middle aligned content">
+        <div class="ui grid">
+          <div class="twelve wide column">
+            <span class="character" *ngFor="let item of playerService.playerFour.cart.items">
+              <app-character-avatar [character]="item.character" [quantity]="item.quantity" [noHover]="true"></app-character-avatar>
+            </span>
+          </div>
+          <div class="center aligned four wide column">
+            ${{totalPrice.toFixed(2)}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="playerService.playerFive != null" class="cart item">
+      <div class="image">
+        <div class="player five" (click)="gotoCart(5)">
+          <span class="name">{{playerService.playerFive.shortName}}</span>
+        </div>
+        <div class="details">
+          <div class="line name">{{playerService.playerFive.name}}</div>
+        </div>
+      </div>
+      <div class="middle aligned content">
+        <div class="ui grid">
+          <div class="twelve wide column">
+            <span class="character" *ngFor="let item of playerService.playerFive.cart.items">
+              <app-character-avatar [character]="item.character" [quantity]="item.quantity"></app-character-avatar>
+            </span>
+          </div>
+          <div class="center aligned four wide column">
+            ${{totalPrice.toFixed(2)}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart item">
+      <a class="image"></a>
+      <div class="middle aligned content">
+        <a class="header"></a>
+        <div class="description">
+          <div class="ui grid">
+            <div class="right aligned twelve wide column"><h3>Order Total</h3></div>
+            <div class="center aligned four wide column">${{totalPrice.toFixed(2)}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noItems>
+    <div class="ui basic center aligned segment">
+      <h3 class="centered">You haven't selected any food items...</h3>
+    </div>
+  </ng-template>
+</div>

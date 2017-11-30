@@ -23,15 +23,9 @@ export class SelectCharactersComponent implements OnInit {
 
     ngOnInit() {
         this.toolbarService.addButton({
-            text: 'Select Player',
+            text: 'Player Select',
             icon: 'chevron-left',
             callback: this.gotoPlayerSelect.bind(this),
-            type: ButtonType.Secondary
-        });
-        this.toolbarService.addButton({
-            text: 'Call Server',
-            icon: 'phone',
-            callback: () => {},
             type: ButtonType.Secondary
         });
         if (this.playerService.getActivePlayer() == null) {

@@ -19,7 +19,8 @@ import { CharacterAvatarComponent } from './character-avatar/character-avatar.co
 import { DiscoverService } from './discover.service';
 import { ImagePreloaderService } from './image-preloader.service';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import {ToolbarService} from "./toolbar.service";
+import { ToolbarService} from './toolbar.service';
+import { ChatContainerComponent } from './chat-container/chat-container.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {ToolbarService} from "./toolbar.service";
       PlayerCartComponent,
       CharacterAvatarComponent,
       ToolbarComponent,
+      ChatContainerComponent,
   ],
   imports: [
       BrowserModule,

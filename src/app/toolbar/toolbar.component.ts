@@ -11,6 +11,7 @@ export class ToolbarComponent implements AfterViewInit {
 
     protected buttonIconPosition = ButtonIconPosition;
     protected isScrolled = false;
+    protected chatVisible = false;
 
     @HostListener('window:scroll')
     onWindowScroll() {

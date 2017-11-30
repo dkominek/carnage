@@ -1,4 +1,4 @@
-<div *ngIf="toolbarService.buttonCount > 0" class="toolbar" [ngClass]="{ opaque: isScrolled }">
+<div class="toolbar" [ngClass]="{ opaque: isScrolled }">
   <div class="primary action">
     <ng-template ngFor let-button [ngForOf]="toolbarService.primaryButtons">
       <button class="ui button huge" (click)="button.callback()" [disabled]="button.disabled">
@@ -7,6 +7,9 @@
         <i *ngIf="button.icon != null && button.iconPosition === buttonIconPosition.Right" class="fa fa-fw fa-{{button.icon}} right"></i>
       </button>
     </ng-template>
+    <button class="ui button huge" (click)="chatVisible = !chatVisible">
+      <i class="fa fa-comments"></i>
+    </button>
   </div>
   <div class="secondary action">
     <ng-template ngFor let-button [ngForOf]="toolbarService.secondaryButtons">
@@ -19,3 +22,4 @@
   </div>
 </div>
 <!--div class="toolbarpush"></div-->
+<app-chat-container [active]="chatVisible"></app-chat-container>

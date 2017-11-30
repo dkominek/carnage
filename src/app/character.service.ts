@@ -185,35 +185,35 @@ export class Appetizer extends Character {
     }
 
     get descriptorOneLeft(): string {
-        return 'Descriptor One';
+        return 'Mild';
     }
 
     get descriptorOneRight(): string {
-        return 'Descriptor One';
+        return 'Zesty';
     }
 
     get descriptorTwoLeft(): string {
-        return 'Descriptor Two';
+        return 'Sweet';
     }
 
     get descriptorTwoRight(): string {
-        return 'Descriptor Two';
+        return 'Spicy';
     }
 
     get descriptorThreeLeft(): string {
-        return 'Descriptor Three';
+        return 'Cold';
     }
 
     get descriptorThreeRight(): string {
-        return 'Descriptor Three';
+        return 'Warm';
     }
 
     get descriptorFourLeft(): string {
-        return 'Descriptor Four';
+        return 'Light';
     }
 
     get descriptorFourRight(): string {
-        return 'Descriptor Four';
+        return 'Heavy';
     }
 }
 
@@ -227,35 +227,35 @@ export class Drink extends Character {
     }
 
     get descriptorOneLeft(): string {
-        return 'Descriptor One';
+        return 'Alcoholic';
     }
 
     get descriptorOneRight(): string {
-        return 'Descriptor One';
+        return 'Non-alcoholic';
     }
 
     get descriptorTwoLeft(): string {
-        return 'Descriptor Two';
+        return 'Sweet';
     }
 
     get descriptorTwoRight(): string {
-        return 'Descriptor Two';
+        return 'Sour';
     }
 
     get descriptorThreeLeft(): string {
-        return 'Descriptor Three';
+        return 'Weak';
     }
 
     get descriptorThreeRight(): string {
-        return 'Descriptor Three';
+        return 'Strong';
     }
 
     get descriptorFourLeft(): string {
-        return 'Descriptor Four';
+        return 'Bubbly';
     }
 
     get descriptorFourRight(): string {
-        return 'Descriptor Four';
+        return 'Flat';
     }
 }
 
@@ -269,35 +269,35 @@ export class Entree extends Character {
     }
 
     get descriptorOneLeft(): string {
-        return 'Descriptor One';
+        return 'Mild';
     }
 
     get descriptorOneRight(): string {
-        return 'Descriptor One';
+        return 'Zesty';
     }
 
     get descriptorTwoLeft(): string {
-        return 'Descriptor Two';
+        return 'Sweet';
     }
 
     get descriptorTwoRight(): string {
-        return 'Descriptor Two';
+        return 'Spicy';
     }
 
     get descriptorThreeLeft(): string {
-        return 'Descriptor Three';
+        return 'Cold';
     }
 
     get descriptorThreeRight(): string {
-        return 'Descriptor Three';
+        return 'Warm';
     }
 
     get descriptorFourLeft(): string {
-        return 'Descriptor Four';
+        return 'Light';
     }
 
     get descriptorFourRight(): string {
-        return 'Descriptor Four';
+        return 'Heavy';
     }
 }
 
@@ -311,34 +311,34 @@ export class Dessert extends Character {
     }
 
     get descriptorOneLeft(): string {
-        return 'Descriptor One';
+        return 'Sweet';
     }
 
     get descriptorOneRight(): string {
-        return 'Descriptor One';
+        return 'Tart';
     }
 
     get descriptorTwoLeft(): string {
-        return 'Descriptor Two';
+        return 'Fruity';
     }
 
     get descriptorTwoRight(): string {
-        return 'Descriptor Two';
+        return 'Sugary';
     }
 
     get descriptorThreeLeft(): string {
-        return 'Descriptor Three';
+        return 'Cold';
     }
 
     get descriptorThreeRight(): string {
-        return 'Descriptor Three';
+        return 'Warm';
     }
 
     get descriptorFourLeft(): string {
-        return 'Descriptor Four';
+        return 'Light';
     }
 
     get descriptorFourRight(): string {
-        return 'Descriptor Four';
+        return 'Heavy';
     }
 }

@@ -151,7 +151,7 @@ export abstract class Character {
     }
 
     get imageUrl(): string {
-        return '/assets/characters/' + this.nameLowercase + '.svg';
+        return '/assets/characters/' + this.nameLowercase + '.png';
     }
 
     abstract get type(): string;

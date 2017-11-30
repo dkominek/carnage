@@ -18,6 +18,7 @@ export enum ButtonType {
 
 export enum ButtonIconPosition {
     Left,
+    Center,
     Right
 }
 

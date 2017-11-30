@@ -11,6 +11,7 @@ export class CharacterAvatarComponent implements OnInit {
   @Input() alwaysShowName = false;
   @Input() noHover = false;
   @Input() character: Character = null;
+  @Input() quantity = 0;
 
   constructor() { }
 

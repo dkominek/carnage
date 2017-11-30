@@ -15,10 +15,12 @@ export class PlayerSetupComponent implements OnInit {
 
     ngOnInit() {
         this.toolbarService.addButton({
-            text: 'Ready to Order',
+            text: 'Review Order',
             icon: 'chevron-right',
             iconPosition: ButtonIconPosition.Right,
-            callback: () => {},
+            callback: () => {
+                this.router.navigate(['/review']);
+            },
             type: ButtonType.Primary
         });
         this.playerService.unsetActivePlayer();

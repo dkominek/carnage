@@ -21,6 +21,8 @@ import { ImagePreloaderService } from './image-preloader.service';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ToolbarService} from './toolbar.service';
 import { ChatContainerComponent } from './chat-container/chat-container.component';
+import { ReviewOrderComponent } from './review-order/review-order.component';
+import { PlaceOrderComponent } from './place-order/place-order.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { ChatContainerComponent } from './chat-container/chat-container.componen
       CharacterAvatarComponent,
       ToolbarComponent,
       ChatContainerComponent,
+      ReviewOrderComponent,
+      PlaceOrderComponent,
   ],
   imports: [
       BrowserModule,

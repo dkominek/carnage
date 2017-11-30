@@ -6,6 +6,8 @@ import {AddPlayerComponent} from '../add-player/add-player.component';
 import {SelectCharactersComponent} from '../select-characters/select-characters.component';
 import {ViewGamesComponent} from '../view-games/view-games.component';
 import {PlayerCartComponent} from '../player-cart/player-cart.component';
+import {ReviewOrderComponent} from "../review-order/review-order.component";
+import {PlaceOrderComponent} from "../place-order/place-order.component";
 
 const routes: Routes = [
     {
@@ -38,6 +40,14 @@ const routes: Routes = [
     {
         path: 'character/:name',
         component: CharacterPageComponent,
+    },
+    {
+        path: 'review',
+        component: ReviewOrderComponent,
+    },
+    {
+        path: 'success',
+        component: PlaceOrderComponent,
     },
     { path: '', redirectTo: '/player/setup', pathMatch: 'full' },
 ];

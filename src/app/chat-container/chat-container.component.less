@@ -1,0 +1,67 @@
+.message-container {
+  width: 30vw;
+  height: 40vh;
+  min-height: 300px;
+  min-width: 350px;
+  padding: 20px;
+
+  position: fixed;
+  bottom: 150px;
+  right: 30px;
+
+  transition: 0.5s background ease, 0.5s border ease, 0.5s box-shadow ease;
+
+  &.inactive {
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    .messages {
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .message.old, .add-message {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .messages {
+    overflow: hidden;
+    height: ~'calc(100% - 60px)';
+  }
+
+  .message {
+    word-break: break-all;
+  }
+
+  .add-message {
+    position: relative;
+    height: 60px;
+
+    .field {
+      height: 100%;
+
+      textarea {
+        width: ~'calc(100% - 110px)';
+        height: 100%;
+        min-height: 100%;
+      }
+
+      button.add {
+        width: 100px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+  .message.old, .add-message {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+}

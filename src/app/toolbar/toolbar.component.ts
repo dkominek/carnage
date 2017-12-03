@@ -1,44 +1,42 @@
-import {AfterViewInit, Component, HostListener} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit} from '@angular/core';
 import {ButtonIconPosition, ToolbarService} from '../toolbar.service';
-import {NavigationEnd, Router, Event} from '@angular/router';
+import {Router, Event, NavigationStart} from '@angular/router';
 
 @Component({
     selector: 'app-toolbar',
     templateUrl: './toolbar.component.html',
     styleUrls: ['./toolbar.component.less']
 })
-export class ToolbarComponent implements AfterViewInit {
+export class ToolbarComponent implements OnInit {
+
+    @Input() scrollEmitter = new EventEmitter<ElementRef>();
 
     protected buttonIconPosition = ButtonIconPosition;
     protected isScrolled = false;
     protected chatVisible = false;
-
-    @HostListener('window:scroll')
-    onWindowScroll() {
-        this.calculateScroll();
-    }
-    @HostListener('window:resize')
-    onWindowResize() {
-        this.calculateScroll();
-    }
+    protected splash = true;
 
     constructor(protected toolbarService: ToolbarService, router: Router) {
         router.events.subscribe((event: Event) => {
-            if (event instanceof NavigationEnd) {
-                this.calculateScroll();
+            if (event instanceof NavigationStart) {
+                this.splash = event.url === '/';
             }
         });
     }
 
-    ngAfterViewInit() {
-        this.calculateScroll();
+    ngOnInit() {
+        if (this.scrollEmitter != null) {
+            this.scrollEmitter.subscribe((element: ElementRef) => {
+                this.calculateScroll(element);
+            });
+        }
     }
 
-    private calculateScroll() {
-        const currPos = window.pageYOffset;
-        const windowSize = window.innerHeight;
+    private calculateScroll(element) {
+        const currPos = element.scrollTop;
+        const elementHeight = element.scrollHeight;
         const bodyHeight = document.body.scrollHeight;
 
-        this.isScrolled = bodyHeight - windowSize - currPos > 0;
+        this.isScrolled = elementHeight - currPos - bodyHeight > 0;
     }
 }

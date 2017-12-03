@@ -1,3 +1,18 @@
-.body {
-  height: ~"calc(100% - 126px)";
+
+
+:host {
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  .body {
+    width: 100%;
+    padding-top: 140px;
+    position: relative;
+    overflow: auto;
+  }
+  /deep/ router-outlet ~ * {
+    position: absolute;
+    width: 100%;
+    height: ~'calc(100% - 140px)';
+  }
 }

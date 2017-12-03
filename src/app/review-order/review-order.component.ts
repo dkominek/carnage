@@ -17,6 +17,19 @@ export class ReviewOrderComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.totalPrice =
+            (this.playerService.playerOne ? this.playerService.playerOne.cart.totalPrice : 0) +
+            (this.playerService.playerTwo ? this.playerService.playerTwo.cart.totalPrice : 0) +
+            (this.playerService.playerThree ? this.playerService.playerThree.cart.totalPrice : 0) +
+            (this.playerService.playerFour ? this.playerService.playerFour.cart.totalPrice : 0) +
+            (this.playerService.playerFive ? this.playerService.playerFive.cart.totalPrice : 0);
+        this.totalQuantity =
+            (this.playerService.playerOne ? this.playerService.playerOne.cart.totalQuantity : 0) +
+            (this.playerService.playerTwo ? this.playerService.playerTwo.cart.totalQuantity : 0) +
+            (this.playerService.playerThree ? this.playerService.playerThree.cart.totalQuantity : 0) +
+            (this.playerService.playerFour ? this.playerService.playerFour.cart.totalQuantity : 0) +
+            (this.playerService.playerFive ? this.playerService.playerFive.cart.totalQuantity : 0);
+
         this.toolbarService.addButton({
             text: 'Player Select',
             icon: 'chevron-left',
@@ -32,21 +45,9 @@ export class ReviewOrderComponent implements OnInit {
                 this.router.navigate(['/success']);
             },
             iconPosition: ButtonIconPosition.Right,
-            type: ButtonType.Primary
+            type: ButtonType.Primary,
+            disabled: this.totalQuantity <= 0
         });
-
-        this.totalPrice =
-            (this.playerService.playerOne ? this.playerService.playerOne.cart.totalPrice : 0) +
-            (this.playerService.playerTwo ? this.playerService.playerTwo.cart.totalPrice : 0) +
-            (this.playerService.playerThree ? this.playerService.playerThree.cart.totalPrice : 0) +
-            (this.playerService.playerFour ? this.playerService.playerFour.cart.totalPrice : 0) +
-            (this.playerService.playerFive ? this.playerService.playerFive.cart.totalPrice : 0);
-        this.totalQuantity =
-            (this.playerService.playerOne ? this.playerService.playerOne.cart.totalQuantity : 0) +
-            (this.playerService.playerTwo ? this.playerService.playerTwo.cart.totalQuantity : 0) +
-            (this.playerService.playerThree ? this.playerService.playerThree.cart.totalQuantity : 0) +
-            (this.playerService.playerFour ? this.playerService.playerFour.cart.totalQuantity : 0) +
-            (this.playerService.playerFive ? this.playerService.playerFive.cart.totalQuantity : 0);
     }
 
     gotoCart(playerIndex: number) {

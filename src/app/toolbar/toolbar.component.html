@@ -1,4 +1,4 @@
-<div class="toolbar" [ngClass]="{ opaque: chatVisible || isScrolled }">
+<div *ngIf="!splash" class="toolbar" [ngClass]="{ opaque: chatVisible || isScrolled }">
   <div class="primary action">
     <ng-template ngFor let-button [ngForOf]="toolbarService.primaryButtons">
       <button class="ui button huge" (click)="button.callback()" [disabled]="button.disabled" [title]="button.text">
@@ -25,5 +25,4 @@
     </ng-template>
   </div>
 </div>
-<!--div class="toolbarpush"></div-->
-<app-chat-container [active]="chatVisible"></app-chat-container>
+<app-chat-container *ngIf="!splash" [active]="chatVisible"></app-chat-container>

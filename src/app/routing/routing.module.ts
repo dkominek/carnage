@@ -8,11 +8,12 @@ import {ViewGamesComponent} from '../view-games/view-games.component';
 import {PlayerCartComponent} from '../player-cart/player-cart.component';
 import {ReviewOrderComponent} from "../review-order/review-order.component";
 import {PlaceOrderComponent} from "../place-order/place-order.component";
+import {SplashComponent} from "../splash/splash.component";
 
 const routes: Routes = [
     {
         path: '',
-        component: PlayerSetupComponent,
+        component: SplashComponent,
     },
     {
         path: 'devour',

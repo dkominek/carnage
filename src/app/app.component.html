@@ -1,5 +1,5 @@
-<app-header></app-header>
-<div class="body">
-    <router-outlet></router-outlet>
+<app-header [scrollEmitter]="onScroll"></app-header>
+<div class="body" #body [@FadeAnimation]="getRouterOutletState(o)" (@FadeAnimation.done)="triggerOnScroll()" (scroll)="triggerOnScroll()">
+    <router-outlet #o="outlet"></router-outlet>
 </div>
-<app-toolbar></app-toolbar>
+<app-toolbar [scrollEmitter]="onScroll"></app-toolbar>

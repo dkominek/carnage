@@ -113,8 +113,6 @@ export class PlayerService {
                 default:
                     throw new Error('Invalid player index: ' + index);
             }
-        } else {
-            throw new Error('Cannot remove player in slot ' + index + '. Slot is empty.');
         }
     }
 

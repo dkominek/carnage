@@ -23,6 +23,8 @@ import { ToolbarService} from './toolbar.service';
 import { ChatContainerComponent } from './chat-container/chat-container.component';
 import { ReviewOrderComponent } from './review-order/review-order.component';
 import { PlaceOrderComponent } from './place-order/place-order.component';
+import { SplashComponent } from './splash/splash.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -40,12 +42,14 @@ import { PlaceOrderComponent } from './place-order/place-order.component';
       ChatContainerComponent,
       ReviewOrderComponent,
       PlaceOrderComponent,
+      SplashComponent,
   ],
   imports: [
       BrowserModule,
       FormsModule,
       HttpModule,
-      RoutingModule
+      RoutingModule,
+      BrowserAnimationsModule
   ],
   providers: [CharacterService, PlayerService, DiscoverService, ImagePreloaderService, ToolbarService],
   bootstrap: [AppComponent]

@@ -6,7 +6,7 @@ import {ButtonIconPosition, ButtonType, ToolbarService} from '../toolbar.service
 @Component({
     selector: 'app-player-setup',
     templateUrl: './player-setup.component.html',
-    styleUrls: ['./player-setup.component.less']
+    styleUrls: ['./player-setup.component.less'],
 })
 export class PlayerSetupComponent implements OnInit {
 
@@ -14,6 +14,13 @@ export class PlayerSetupComponent implements OnInit {
     }
 
     ngOnInit() {
+        const totalQuantity =
+            (this.playerService.playerOne ? this.playerService.playerOne.cart.totalQuantity : 0) +
+            (this.playerService.playerTwo ? this.playerService.playerTwo.cart.totalQuantity : 0) +
+            (this.playerService.playerThree ? this.playerService.playerThree.cart.totalQuantity : 0) +
+            (this.playerService.playerFour ? this.playerService.playerFour.cart.totalQuantity : 0) +
+            (this.playerService.playerFive ? this.playerService.playerFive.cart.totalQuantity : 0);
+
         this.toolbarService.addButton({
             text: 'Review Order',
             icon: 'chevron-right',
@@ -21,7 +28,8 @@ export class PlayerSetupComponent implements OnInit {
             callback: () => {
                 this.router.navigate(['/review']);
             },
-            type: ButtonType.Primary
+            type: ButtonType.Primary,
+            disabled: totalQuantity <= 0
         });
         this.playerService.unsetActivePlayer();
     }

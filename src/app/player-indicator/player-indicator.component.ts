@@ -10,8 +10,8 @@ export class PlayerIndicatorComponent implements OnInit {
 
   visible = true;
 
-  protected player: Player;
-  protected get avatarClass(): any {
+  player: Player;
+  get avatarClass(): any {
     return {
       one: this.playerService.activePlayerIndex === 1,
       two: this.playerService.activePlayerIndex === 2,

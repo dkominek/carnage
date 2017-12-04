@@ -10,7 +10,7 @@ import {ButtonIconPosition, ButtonType, ToolbarService} from '../toolbar.service
 })
 export class PlayerSetupComponent implements OnInit {
 
-    constructor(private router: Router, protected playerService: PlayerService, protected toolbarService: ToolbarService) {
+    constructor(private router: Router, public playerService: PlayerService, public toolbarService: ToolbarService) {
     }
 
     ngOnInit() {

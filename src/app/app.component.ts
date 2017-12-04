@@ -9,10 +9,10 @@ import {FadeAnimation} from './routing/router.transition';
     animations: [FadeAnimation]
 })
 export class AppComponent implements OnInit {
-    protected title = 'app';
+    title = 'app';
 
     @ViewChild('body') body: ElementRef = null;
-    protected onScroll = new EventEmitter<ElementRef>();
+    onScroll = new EventEmitter<ElementRef>();
 
     constructor(private router: Router) {
     }

@@ -22,9 +22,9 @@ export class DiscoverService {
         'w14beXiD4Cg',
         '4900jOY8cCM'
     ];
-    protected videos: DiscoverVideo[] = [];
+    videos: DiscoverVideo[] = [];
 
-    constructor(private sanitizer: DomSanitizer, private imagePreloader: ImagePreloaderService, protected http: Http) {
+    constructor(private sanitizer: DomSanitizer, private imagePreloader: ImagePreloaderService, private http: Http) {
         const params: URLSearchParams = new URLSearchParams();
         params.set('id', this.videoIds.join());
         params.set('part', 'snippet,contentDetails,player');

@@ -11,9 +11,9 @@ export class HeaderComponent implements OnInit {
 
     @Input() scrollEmitter = new EventEmitter<ElementRef>();
 
-    protected isScrolled = false;
-    protected visible = true;
-    protected splash = true;
+    isScrolled = false;
+    visible = true;
+    splash = true;
 
     constructor(private router: Router, private playerService: PlayerService) {
     }

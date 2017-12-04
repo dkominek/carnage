@@ -13,16 +13,16 @@ export class ChatContainerComponent implements OnInit {
 
   @Input() active = false;
 
-  protected disabled = false;
+  disabled = false;
 
   readonly PLACEHOLDER_ENABLED = 'Enter a message...';
   readonly PLACEHOLDER_DISABLED = 'Select a player to participate in chat...';
 
-  protected placeholder = this.PLACEHOLDER_DISABLED;
-  protected message = '';
-  protected messages: Message[] = [];
+  placeholder = this.PLACEHOLDER_DISABLED;
+  message = '';
+  messages: Message[] = [];
 
-  constructor(protected chatService: ChatService, protected playerService: PlayerService) { }
+  constructor(public chatService: ChatService, public playerService: PlayerService) { }
 
   ngOnInit() {
     this.playerService.activePlayerChanged.subscribe((player) =>  {
@@ -41,7 +41,7 @@ export class ChatContainerComponent implements OnInit {
     });
   }
 
-  protected addMessage(evt = null) {
+  addMessage(evt = null) {
     if (evt) {
       evt.preventDefault();
     }

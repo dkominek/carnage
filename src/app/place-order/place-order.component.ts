@@ -9,8 +9,8 @@ import {PlayerService} from '../player.service';
 })
 export class PlaceOrderComponent implements OnInit, AfterViewInit {
 
-    protected progressSeconds = 10;
-    protected scrolling = false;
+    progressSeconds = 10;
+    scrolling = false;
 
     constructor(private router: Router, private playerService: PlayerService) {
     }

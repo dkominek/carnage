@@ -10,7 +10,7 @@ import {ButtonIconPosition, ButtonType, ToolbarService} from '../toolbar.service
 })
 export class PlayerCartComponent implements OnInit {
 
-    protected player: Player;
+    player: Player;
 
   constructor(private router: Router, private playerService: PlayerService, private toolbarService: ToolbarService) { }
 

@@ -11,14 +11,14 @@ import {ButtonType, ToolbarService} from "../toolbar.service";
 })
 export class SelectCharactersComponent implements OnInit {
 
-    protected filters: string[] = [];
-    protected characters: Character[] = [];
+    filters: string[] = [];
+    characters: Character[] = [];
 
     constructor(
         private router: Router,
         private playerService: PlayerService,
-        protected characterService: CharacterService,
-        protected toolbarService: ToolbarService
+        public characterService: CharacterService,
+        public toolbarService: ToolbarService
     ) {}
 
     ngOnInit() {
@@ -36,7 +36,7 @@ export class SelectCharactersComponent implements OnInit {
         this.characters = this.characterService.characters.slice(0);
     }
 
-    protected toggleFilter(filterName) {
+    toggleFilter(filterName) {
         const index = this.filters.indexOf(filterName);
         if (index !== -1) {
             this.filters.splice(index, 1);
@@ -58,15 +58,15 @@ export class SelectCharactersComponent implements OnInit {
         this.filterCharacters();
     }
 
-    protected gotoCharacter(character) {
+    gotoCharacter(character) {
         this.router.navigate(['/character', character.nameLowercase]);
     }
 
-    protected gotoPlayerSelect() {
+    gotoPlayerSelect() {
         this.router.navigate(['/player/setup']);
     }
 
-    protected filterCharacters() {
+    filterCharacters() {
         this.characters = [];
         const typeFilters = [];
         const subtypeFilters = [];

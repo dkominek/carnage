@@ -11,12 +11,12 @@ export class ToolbarComponent implements OnInit {
 
     @Input() scrollEmitter = new EventEmitter<ElementRef>();
 
-    protected buttonIconPosition = ButtonIconPosition;
-    protected isScrolled = false;
-    protected chatVisible = false;
-    protected splash = true;
+    buttonIconPosition = ButtonIconPosition;
+    isScrolled = false;
+    chatVisible = false;
+    splash = true;
 
-    constructor(protected toolbarService: ToolbarService, router: Router) {
+    constructor(toolbarService: ToolbarService, router: Router) {
         router.events.subscribe((event: Event) => {
             if (event instanceof NavigationStart) {
                 this.splash = event.url === '/';

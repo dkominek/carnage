@@ -16,7 +16,7 @@ export class AddPlayerComponent implements OnInit {
 
     errorMessage: string = '';
 
-    protected get avatarClass(): any {
+    get avatarClass(): any {
         return {
             one: this.playerIndex === 1,
             two: this.playerIndex === 2,

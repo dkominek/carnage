@@ -10,10 +10,10 @@ import {ToolbarService, ButtonType, ButtonIconPosition} from '../toolbar.service
 })
 export class ReviewOrderComponent implements OnInit {
 
-    protected totalPrice = 0;
-    protected totalQuantity = 0;
+    totalPrice = 0;
+    totalQuantity = 0;
 
-    constructor(private router: Router, protected playerService: PlayerService, private toolbarService: ToolbarService) {
+    constructor(private router: Router, public playerService: PlayerService, private toolbarService: ToolbarService) {
     }
 
     ngOnInit() {

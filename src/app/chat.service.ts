@@ -15,7 +15,7 @@ export interface Message {
 export class ChatService {
     public messages: Subject<Message>;
 
-    constructor(wsService: WebsocketService, protected playerService: PlayerService) {
+    constructor(private wsService: WebsocketService, private playerService: PlayerService) {
         this.messages = <Subject<Message>>wsService
             .connect(CHAT_URL)
             .map((response: MessageEvent): Message => {

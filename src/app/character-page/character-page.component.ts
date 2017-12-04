@@ -41,7 +41,7 @@ export class CharacterPageComponent implements OnInit {
         });
     }
 
-    protected addToCart() {
+    addToCart() {
         this.playerService.getActivePlayer().cart.addCharacter(this.character);
         this.addDisabled.next(true);
         this.addText.next('Added');
@@ -51,23 +51,23 @@ export class CharacterPageComponent implements OnInit {
         }, 1500);
     }
 
-    protected gotoCharacterSelect() {
+    gotoCharacterSelect() {
         this.router.navigate(['/devour']);
     }
 
-    protected navigateToCharacter(character: Character) {
+    navigateToCharacter(character: Character) {
         if (character != null) {
             this.router.navigate(['/character', character.nameLowercase]);
             this.addButtons();
         }
     }
 
-    protected navigateNext() {
+    navigateNext() {
         const nextCharacter = this.getCharacter(1);
         this.navigateToCharacter(nextCharacter);
     }
 
-    protected navigatePrevious() {
+    navigatePrevious() {
         const previousCharacter = this.getCharacter(-1);
         this.navigateToCharacter(previousCharacter);
     }

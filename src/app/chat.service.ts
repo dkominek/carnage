@@ -3,7 +3,7 @@ import {Subject} from 'rxjs/Rx';
 import {WebsocketService} from './websocket.service';
 import {PlayerService} from './player.service';
 
-const CHAT_URL = window.location.hostname + ':' + (window.location.port || 8080) + '/';
+const CHAT_URL = window.location.hostname + (window.location.port ? ':' + window.location.port : '') + '/';
 
 export interface Message {
     author: string;

@@ -1,7 +1,7 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {ChatService, Message} from '../chat.service';
 import {WebsocketService} from '../websocket.service';
-import {PlayerService} from "../player.service";
+import {PlayerService} from '../player.service';
 
 @Component({
   selector: 'app-chat-container',
@@ -39,12 +39,12 @@ export class ChatContainerComponent implements OnInit {
 
     this.chatService.messages.subscribe((m) => {
       this.messages.push(m);
-      if (this.messagesElement != null) {
-          this.messagesElement.nativeElement.scrollTop = this.messagesElement.nativeElement.scrollHeight;
-      }
 
       setTimeout(() => {
-      }, 5000);
+          if (this.messagesElement != null) {
+              this.messagesElement.nativeElement.scrollTop = this.messagesElement.nativeElement.scrollHeight;
+          }
+      });
     });
   }
 

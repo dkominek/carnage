@@ -16,7 +16,7 @@ export class ToolbarComponent implements OnInit {
     chatVisible = false;
     splash = true;
 
-    constructor(toolbarService: ToolbarService, router: Router) {
+    constructor(public toolbarService: ToolbarService, private router: Router) {
         router.events.subscribe((event: Event) => {
             if (event instanceof NavigationStart) {
                 this.splash = event.url === '/';

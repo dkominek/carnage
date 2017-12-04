@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs/Rx';
-import { WebsocketService } from './websocket.service';
+import {Injectable} from '@angular/core';
+import {Subject} from 'rxjs/Rx';
+import {WebsocketService} from './websocket.service';
 import {PlayerService} from './player.service';
 
-const CHAT_URL = 'ws://localhost:8080/';
+const CHAT_URL = 'ws://' + window.location.hostname + ':' + (window.location.port || 8080) + '/';
 
 export interface Message {
     author: string;

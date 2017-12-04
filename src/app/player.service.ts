@@ -32,11 +32,7 @@ export class PlayerService {
     }
     public activePlayerChanged: EventEmitter<Player> = new EventEmitter<Player>();
 
-    constructor() {
-        if (environment.production === false) {
-            this.addPlayer(new Player('Test Customer'), 1);
-        }
-    }
+    constructor() {}
 
     addPlayer(player: Player, index: number) {
         if (index < 1 || index > 5) {

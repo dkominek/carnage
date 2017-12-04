@@ -2,9 +2,14 @@
   "name": "carnage",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "6.11.1",
+    "npm": "3.10.9"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start-dev": "ng serve",
+    "start": " ng build --env=prod && node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -26,7 +31,15 @@
     "font-awesome": "^4.7.0",
     "rxjs": "^5.4.2",
     "semantic-ui": "^2.2.13",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5",
+    "ws": "^3.3.2"
   },
   "devDependencies": {
     "@angular/cli": "1.4.5",

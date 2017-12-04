@@ -21,6 +21,10 @@
     .messages {
       overflow-y: auto;
       overflow-x: hidden;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     .message.old, .add-message {
@@ -33,6 +37,10 @@
     overflow-y: auto;
     overflow-x: hidden;
     height: ~'calc(100% - 60px)';
+
+    &::-webkit-scrollbar {
+      display: initial;
+    }
   }
 
   .message {

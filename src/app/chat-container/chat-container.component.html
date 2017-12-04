@@ -1,12 +1,14 @@
 <div class="ui segment message-container" [ngClass]="{ inactive: !active }">
   <div class="messages" #messagesElement>
-    <div *ngFor="let message of messages" class="message" [ngClass]="{ old: message.old }">
+    <div *ngFor="let message of messages" class="message old">
       <b>[{{message.timestamp}}] {{message.author}}:</b> {{message.message}}
     </div>
   </div>
   <div class="ui form add-message">
     <div class="field">
-      <textarea [(ngModel)]="message" [placeholder]="placeholder" (keydown.enter)="addMessage($event)" [disabled]="disabled"></textarea>
+      <textarea [(ngModel)]="message" [placeholder]="placeholder" (keydown.enter)="addMessage($event)"
+                [attr.disabled]="disabled" [attr.readonly]="disabled"
+                [disabled]="disabled" [readonly]="disabled"></textarea>
       <button class="ui button medium add" (click)="addMessage()" [disabled]="disabled || message == null || message.length == 0">Send</button>
     </div>
   </div>

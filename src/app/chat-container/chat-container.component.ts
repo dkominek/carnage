@@ -38,14 +38,12 @@ export class ChatContainerComponent implements OnInit {
     });
 
     this.chatService.messages.subscribe((m) => {
-      m.old = false;
       this.messages.push(m);
       if (this.messagesElement != null) {
           this.messagesElement.nativeElement.scrollTop = this.messagesElement.nativeElement.scrollHeight;
       }
 
       setTimeout(() => {
-        m.old = true;
       }, 5000);
     });
   }

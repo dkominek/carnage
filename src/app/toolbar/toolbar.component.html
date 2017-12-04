@@ -8,7 +8,7 @@
         <i *ngIf="button.icon != null && button.iconPosition === buttonIconPosition.Right" class="fa fa-fw fa-{{button.icon}} right"></i>
       </button>
     </ng-template>
-    <button class="ui button huge" title="Call Server">
+    <button class="ui button huge" (click)="showCallServerPopup()" title="Call Server">
       <i class="fa fa-phone"></i>
     </button>
     <button class="ui button huge" (click)="chatVisible = !chatVisible" title="Show Chat">
@@ -24,5 +24,9 @@
       </button>
     </ng-template>
   </div>
+</div>
+<div class="ui segment call-server-container" (click)="callServerActive = false" [ngClass]="{ inactive: !callServerActive }">
+  <h3 class="ui header">Your server is on the way!</h3>
+  <p>(click to close this message)</p>
 </div>
 <app-chat-container *ngIf="!splash" [active]="chatVisible"></app-chat-container>

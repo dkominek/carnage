@@ -11,6 +11,8 @@ export class ToolbarComponent implements OnInit {
 
     @Input() scrollEmitter = new EventEmitter<ElementRef>();
 
+    callServerTimeoutHandle = null;
+    callServerActive = false;
     buttonIconPosition = ButtonIconPosition;
     isScrolled = false;
     chatVisible = false;
@@ -30,6 +32,16 @@ export class ToolbarComponent implements OnInit {
                 this.calculateScroll(element);
             });
         }
+    }
+
+    showCallServerPopup() {
+        this.callServerActive = true;
+        clearTimeout(this.callServerTimeoutHandle);
+
+
+        this.callServerTimeoutHandle = setTimeout(() => {
+            this.callServerActive = false;
+        }, 10000);
     }
 
     private calculateScroll(element) {

@@ -12,7 +12,7 @@ app.get('/*', function(req, res) {
 });
 
 const server = http.createServer(app);
-const wss = new WebSocket.Server({ server });
+const wss = new WebSocket.Server({ server: server });
 
 wss.on('connection', function connection(ws) {
     ws.on('message', function incoming(data) {

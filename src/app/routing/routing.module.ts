@@ -14,43 +14,58 @@ const routes: Routes = [
     {
         path: '',
         component: SplashComponent,
+        pathMatch: 'full'
     },
     {
         path: 'devour',
         component: SelectCharactersComponent,
+        pathMatch: 'full'
     },
     {
         path: 'discover',
         component: ViewGamesComponent,
+        pathMatch: 'full'
     },
     {
-        path: 'player', redirectTo: '/player/setup', pathMatch: 'full'
+        path: 'player',
+        redirectTo: '/player/setup',
+        pathMatch: 'full'
     },
     {
         path: 'player/add/:number',
         component: AddPlayerComponent,
+        pathMatch: 'full'
     },
     {
         path: 'player/cart',
         component: PlayerCartComponent,
+        pathMatch: 'full'
     },
     {
         path: 'player/setup',
         component: PlayerSetupComponent,
+        pathMatch: 'full'
     },
     {
         path: 'character/:name',
         component: CharacterPageComponent,
+        pathMatch: 'full'
     },
     {
         path: 'review',
         component: ReviewOrderComponent,
+        pathMatch: 'full'
     },
     {
         path: 'success',
         component: PlaceOrderComponent,
+        pathMatch: 'full'
     },
-    { path: '', redirectTo: '/player/setup', pathMatch: 'full' },
+    {
+        path: '',
+        redirectTo: '/player/setup',
+        pathMatch: 'full'
+    },
 ];
 
 @NgModule({

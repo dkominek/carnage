@@ -1,6 +1,6 @@
 <div class="ui segment message-container" [ngClass]="{ inactive: !active }">
-  <div class="messages">
-    <div *ngFor="let message of messages" class="message">
+  <div class="messages" #messagesElement>
+    <div *ngFor="let message of messages" class="message" [ngClass]="{ old: message.old }">
       <b>[{{message.timestamp}}] {{message.author}}:</b> {{message.message}}
     </div>
   </div>

@@ -3,7 +3,7 @@ import {Subject} from 'rxjs/Rx';
 import {WebsocketService} from './websocket.service';
 import {PlayerService} from './player.service';
 
-const CHAT_URL = 'ws://' + window.location.hostname + ':' + (window.location.port || 8080) + '/';
+const CHAT_URL = window.location.hostname + ':' + (window.location.port || 8080) + '/';
 
 export interface Message {
     author: string;
@@ -16,9 +16,15 @@ export class ChatService {
     public messages: Subject<Message>;
 
     constructor(private wsService: WebsocketService, private playerService: PlayerService) {
-        this.messages = <Subject<Message>>wsService
-            .connect(CHAT_URL)
-            .map((response: MessageEvent): Message => {
+        let service = null;
+        try {
+            service = wsService.connect('wss://' + CHAT_URL);
+        } catch (ex) {
+            service = wsService.connect('ws://' + CHAT_URL);
+        }
+
+        if (service != null) {
+            this.messages = service.map((response: MessageEvent): Message => {
                 const data = JSON.parse(response.data);
                 const now = (new Date());
                 const pad = '00';
@@ -35,6 +41,9 @@ export class ChatService {
                     timestamp: hours + ':' + minutes
                 };
             });
+        } else {
+            this.messages = new Subject<Message>();
+        }
     }
 
     addMessage(message: string): boolean {

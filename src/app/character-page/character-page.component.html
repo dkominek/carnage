@@ -28,10 +28,7 @@
                             <span class="header">Story</span>
                             <div class="description">
                                 <p *ngIf="character?.story == null">This character does not have a story yet...</p>
-                                <p id="story-text" [ngClass]="{ expanded: storyExpanded }" *ngIf="character?.story != null">{{storyExpanded ? character?.story : character?.storyShort}}</p>
-                            </div>
-                            <div *ngIf="character?.story?.length > shortStoryLength" class="extra" (click)="storyExpanded = !storyExpanded">
-                                Show {{storyExpanded ? 'less' : 'more'}}...
+                                <p id="story-text expanded" *ngIf="character?.story != null" [innerHtml]="character?.story"></p>
                             </div>
                         </div>
                     </div>

@@ -38,7 +38,7 @@ export class CharacterService {
         new Appetizer(
             'B.C. Winge',
             CharacterSubtype.CARNIVORE, 9.99,
-            'Choice of honey BBQ, spicy sweet Asian chili or spicy buffalo. No matter which seasoned and savory combination you pick, these boneless wings travel/attack in a pack.',
+            'Choice of honey BBQ, spicy sweet Asian chili or spicy buffalo. No matter which seasoned and savory combination you pick, <br/>these boneless wings travel/attack in a pack.',
             73, 49, 23, 58),
         new Appetizer(
             'S. Archibite',

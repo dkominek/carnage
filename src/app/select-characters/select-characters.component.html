@@ -3,12 +3,14 @@
     <div class="ui sixteen wide column">
       <h3 class="ui header">Claim your slaughter</h3>
       <ul class="filters container">
+        <li class="filter-label"><b>Type:</b></li>
         <li class="filter" [ngClass]="{ active: filters.indexOf('drink') !== -1 }"><a (click)="toggleFilter('drink')"><img src="/assets/icons/drink.svg"/></a></li>
         <li class="filter" [ngClass]="{ active: filters.indexOf('appetizer') !== -1 }"><a (click)="toggleFilter('appetizer')"><img src="/assets/icons/appetizer.svg"/></a></li>
         <li class="filter" [ngClass]="{ active: filters.indexOf('entree') !== -1 }"><a (click)="toggleFilter('entree')"><img src="/assets/icons/entree.svg"/></a></li>
         <li class="filter" [ngClass]="{ active: filters.indexOf('dessert') !== -1 }"><a (click)="toggleFilter('dessert')"><img src="/assets/icons/dessert.svg"/></a></li>
       </ul>
       <ul class="filters container">
+        <li class="filter-label"><b>Class:</b></li>
         <li class="filter" [ngClass]="{ active: filters.indexOf('carnivore') !== -1 }"><a (click)="toggleFilter('carnivore')"><img src="/assets/icons/carnivore.svg"/></a></li>
         <li class="filter" [ngClass]="{ active: filters.indexOf('herbivore') !== -1 }"><a (click)="toggleFilter('herbivore')"><img src="/assets/icons/herbivore.svg"/></a></li>
       </ul>

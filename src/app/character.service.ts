@@ -9,7 +9,7 @@ export class CharacterService {
             CharacterSubtype.CARNIVORE, 10.99,
             '½ pounder with lettuce, cheese and tomato. This hamburger has some zest. Wouldn\'t want to meet him in a dark ally',
             10, 15, 24, 85,
-            '5px', '10px'),
+            '5px', '10px', '120%'),
         new Entree(
             'Sampson',
             CharacterSubtype.CARNIVORE, 14.99,
@@ -132,7 +132,8 @@ export abstract class Character {
                        public attributeThree: number,
                        public attributeFour: number,
                        public avatarHorizontalOffset: string = '0px',
-                       public avatarVerticalOffset: string = '0px') {
+                       public avatarVerticalOffset: string = '0px',
+                       public scaling: string = '120%') {
         this.nameLowercase = name.toLowerCase().replace(/\s/g, '_');
         this.priceString = '$' + price.toFixed(2);
         if (story.length > Character.SHORT_STORY_LENGTH) {

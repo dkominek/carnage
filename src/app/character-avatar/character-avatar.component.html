@@ -1,7 +1,7 @@
 <div class="avatar" [ngClass]="{ nohover: noHover }">
   <span class="image container">
     <img [attr.src]="character?.avatarUrl"
-         [ngStyle]="{ transform: 'translate(' + character?.avatarHorizontalOffset + ',' + character?.avatarVerticalOffset + ')' }"/>
+         [ngStyle]="{ transform: 'translate(' + character?.avatarHorizontalOffset + ',' + character?.avatarVerticalOffset + ')', width: character?.scaling }"/>
   </span>
   <span *ngIf="quantity > 1" class="quantity">{{quantity}}</span>
   <div class="name" [ngClass]="{ active: alwaysShowName }">{{character?.name}}</div>

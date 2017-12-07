@@ -30,6 +30,11 @@ export class CharacterService {
             CharacterSubtype.CARNIVORE, 13.99,
             'Grilled T-Bone steak. This steak is tough and meaty. Make sure you watch your back.',
             34, 57, 91, 45),
+        new Entree(
+            'Philly',
+            CharacterSubtype.CARNIVORE, 13.99,
+            '',
+            34, 57, 91, 45),
         new Appetizer(
             'Tacho',
             CharacterSubtype.CARNIVORE, 10.99,
@@ -47,8 +52,13 @@ export class CharacterService {
             73, 49, 23, 58),
         new Dessert(
             'Choco Cak',
-            CharacterSubtype.CARNIVORE, 6.99,
+            CharacterSubtype.HERBIVORE, 6.99,
             'Moist chocolate cake separated by rich chocolate ganache. Although very moist and chewy, this cake will hit you like a lead pipe.',
+            73, 49, 23, 58),
+        new Dessert(
+            'K.L.P.',
+            CharacterSubtype.HERBIVORE, 6.99,
+            'A tart pie with a graham cracker crust topped with whipped cream. This pie is bittersweet. It will put you in your place.',
             73, 49, 23, 58),
         new Dessert(
             'K.L.P.',
@@ -66,7 +76,7 @@ export class CharacterService {
             'Pale lager beer with 5% alcohol by volume. Hoppy with a little extra zing. Stay out of the way because this beer could knock you on your keister.',
             73, 49, 23, 58),
         new Drink(
-            'Weinstein',
+            'Sangrolina',
             CharacterSubtype.HERBIVORE, 5.99,
             'Red wine and chopped fruit with a splash of orange juice. Full-bodied and refreshing. This wine has a sweet side but don’t let that fool you.',
             73, 49, 23, 58),

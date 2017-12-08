@@ -7,110 +7,111 @@ export class CharacterService {
         new Entree(
             'Hermberg',
             CharacterSubtype.CARNIVORE, 10.99,
-            '½ pounder with lettuce, cheese and tomato. This hamburger has some zest. Wouldn\'t want to meet him in a dark ally',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            '½ pounder with lettuce, cheese and tomato. This hamburger has some zest. Wouldn\'t want to meet him in a dark alley...',
+            83, 57, 75, 94,
+            '4px', '15px', '120%'),
         new Entree(
             'Sampson',
             CharacterSubtype.CARNIVORE, 14.99,
-            'Wild Alaskan Salmon seared on the grill. Fishy and strong and lip-smacking. Be careful this salmon might slap you upside the head.',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            'Wild Alaskan Salmon seared on the grill. Fishy and strong and lip-smacking. <br/> Be careful! this salmon might slap you upside the head!',
+            13, 48, 72, 36,
+            '-12px', '12px', '125%'),
         new Entree(
             'Virgil',
             CharacterSubtype.HERBIVORE, 11.99,
-            'Lettuce, cheese, tomato and creamy Caesar dressing in a grilled Italian Flatbread. This veggie wrap may end up in pieces…..',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            'Lettuce, cheese, tomato and creamy Caesar dressing in a grilled Italian Flatbread. <br/> This veggie wrap may end up in piece...',
+            53, 42, 16, 47,
+            '-55px', '-8px', '155%'),
         new Entree(
             'Sal',
             CharacterSubtype.HERBIVORE, 9.99,
-            '¼ iceberg lettuce with choice of vegetables and dressing. Crunchy and crisp. This salad will toss you in a headlock.',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            '¼ iceberg lettuce wedge with choice of vegetables and dressing. Crunchy and crisp. This salad will toss you in a headlock.',
+            19, 38, 7, 10,
+            '3px', '11px', '120%'),
         new Entree(
-            'Stake',
+            'Sven',
             CharacterSubtype.CARNIVORE, 13.99,
             'Grilled T-Bone steak. This steak is tough and meaty. Make sure you watch your back.',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            68, 52, 67, 79,
+            '-12px', '10px', '140%'),
         new Entree(
-            'Philly',
+            'Philibert',
             CharacterSubtype.CARNIVORE, 13.99,
             '',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            23, 50, 78, 90,
+            '-4px', '0px', '130%'),
         new Appetizer(
-            'Tacho',
+            'Theo',
             CharacterSubtype.CARNIVORE, 10.99,
             'Beef, lettuce, cheese, tomatoes and sour cream in a crunchy shell. Very self-contained. This taco only protects his own.',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            77, 61, 85, 58,
+            '3px', '-13px', '140%'),
         new Appetizer(
             'B.C. Winge',
             CharacterSubtype.CARNIVORE, 9.99,
-            'Choice of honey BBQ, spicy sweet Asian chili or spicy buffalo. No matter which seasoned and savory combination you pick, <br/>these boneless wings travel/attack in a pack.',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            'Choice of honey BBQ, spicy sweet Asian chili or spicy buffalo. No matter which seasoned and savory combination you pick, these boneless wings travel in a pack.',
+            54, 62, 71, 65,
+            '-14px', '-10px', '140%'),
         new Appetizer(
             'S. Archibite',
             CharacterSubtype.HERBIVORE, 8.99,
-            'Shredded mozzarella, Parmesan, artichokes, spinach, cream cheese, sour cream in crescent bowls. A splendid mix of gooey, cheesy, firm and flakey. Watch your step/Watch out/Be careful, you never know what you will get.',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            'Shredded mozzarella, Parmesan, artichokes, spinach, cream cheese, sour cream in crescent bowls. A splendid mix of gooey, cheesy, firm and flakey. Watch your step, you never know what you will get.',
+            34, 46, 57, 35,
+            '-1px', '-15px', '125%'),
         new Dessert(
-            'Choco Cak',
+            'Caine',
             CharacterSubtype.HERBIVORE, 6.99,
             'Moist chocolate cake separated by rich chocolate ganache. Although very moist and chewy, this cake will hit you like a lead pipe.',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            90, 96, 63, 74,
+            '9px', '0px', '110%'),
         new Dessert(
             'K.L.P.',
             CharacterSubtype.HERBIVORE, 6.99,
             'A tart pie with a graham cracker crust topped with whipped cream. This pie is bittersweet. It will put you in your place.',
-            73, 49, 23, 58),
+            26, 27, 24, 38,
+            '7px', '0px', '120%'),
         new Dessert(
-            'Ice Cream',
+            'Ignace',
             CharacterSubtype.HERBIVORE, 6.99,
-            'A tart pie with a graham cracker crust topped with whipped cream. This pie is bittersweet. It will put you in your place.',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            '',
+            87, 80, 2, 8,
+            '-39px', '-22px', '170%'),
         new Drink(
             'Sado',
             CharacterSubtype.HERBIVORE, 2.99,
-            'Carbonated water, sweetener and natural flavoring served with ice cubes. Fizzy and exuberant. Beware, this soda will pop you in the mouth!',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            'Carbonated water, sweetener and natural flavoring served with ice cubes. <br/>Fizzy and exuberant. Beware, this soda will pop you in the mouth!',
+            6, 32, 49, 96,
+            '-30px', '8px', '150%'),
         new Drink(
-            'Bier',
+            'Berit',
             CharacterSubtype.HERBIVORE, 4.99,
-            'Pale lager beer with 5% alcohol by volume. Hoppy with a little extra zing. Stay out of the way because this beer could knock you on your keister.',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            'Pale lager beer with 5% alcohol by volume.  Hoppy with a little extra zing. Stay out of the way because this beer could knock you on your keister.',
+            83, 51, 57, 89,
+            '-32px', '-80px', '160%'),
         new Drink(
             'Sangrolina',
             CharacterSubtype.HERBIVORE, 5.99,
             'Red wine and chopped fruit with a splash of orange juice. Full-bodied and refreshing. This wine has a sweet side but don’t let that fool you.',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            91, 45, 53, 14,
+            '-18px', '15px', '150%'),
         new Drink(
             'Ye Olde One',
             CharacterSubtype.HERBIVORE, 6.99,
-            'Sugar and bitters, with whiskey and a twist of citrus rind. Aged to perfection. This cocktail will wrap you up and spit you out.',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            'Sugar and bitters, with whiskey and a twist of citrus rind. Aged to perfection. <br/>This cocktail will wrap you up and spit you out.',
+            97, 62, 85, 74,
+            '2px', '10px', '120%'),
         new Drink(
             'Le Slush',
             CharacterSubtype.HERBIVORE, 3.99,
-            'Lemonade blended with ice and fruit puree.  Citrusy, cool and icy. This lemonade will freeze your melon.',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            'Lemonade blended with ice and fruit puree. Citrusy, cool and icy. This lemonade will freeze your melon.',
+            8, 15, 37, 18,
+            '-39px', '-5px', '150%'),
         new Drink(
             'Marge',
             CharacterSubtype.HERBIVORE, 6.99,
-            'Tequila, triple sec and lime juice; salted to perfection around the rim. This Margarita is tangy and will blow you to the moon/blow your mind. (Tang is the juice for astronauts)\n',
-            10, 15, 24, 85,
-            '5px', '10px', '120%'),
+            'Tequila, triple sec and lime juice; salted to perfection around the rim. This Margarita is tangy and will blow your mind.',
+            94, 70, 81, 26,
+            '-9px', '10px', '145%'),
     ];
     // tslint:enable:max-line-length
 
@@ -254,11 +255,11 @@ export class Drink extends Character {
     }
 
     get descriptorOneLeft(): string {
-        return 'Alcoholic';
+        return 'Non-alcoholic';
     }
 
     get descriptorOneRight(): string {
-        return 'Non-alcoholic';
+        return 'Alcoholic';
     }
 
     get descriptorTwoLeft(): string {
@@ -278,11 +279,11 @@ export class Drink extends Character {
     }
 
     get descriptorFourLeft(): string {
-        return 'Bubbly';
+        return 'Flat';
     }
 
     get descriptorFourRight(): string {
-        return 'Flat';
+        return 'Bubbly';
     }
 }
 
@@ -338,11 +339,11 @@ export class Dessert extends Character {
     }
 
     get descriptorOneLeft(): string {
-        return 'Sweet';
+        return 'Tart';
     }
 
     get descriptorOneRight(): string {
-        return 'Tart';
+        return 'Sweet';
     }
 
     get descriptorTwoLeft(): string {

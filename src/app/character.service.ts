@@ -37,7 +37,7 @@ export class CharacterService {
         new Entree(
             'Philibert',
             CharacterSubtype.CARNIVORE, 13.99,
-            '',
+            'Sliced sirloin, peppers, onions, mayo and provolone, on a hoagie roll.',
             23, 50, 78, 90,
             '-4px', '0px', '130%'),
         new Appetizer(
@@ -57,7 +57,7 @@ export class CharacterService {
             CharacterSubtype.HERBIVORE, 8.99,
             'Shredded mozzarella, Parmesan, artichokes, spinach, cream cheese, sour cream in crescent bowls. A splendid mix of gooey, cheesy, firm and flakey. Watch your step, you never know what you will get.',
             34, 46, 57, 35,
-            '-1px', '-15px', '125%'),
+            '-2px', '-12px', '125%'),
         new Dessert(
             'Caine',
             CharacterSubtype.HERBIVORE, 6.99,
@@ -73,7 +73,7 @@ export class CharacterService {
         new Dessert(
             'Ignace',
             CharacterSubtype.HERBIVORE, 6.99,
-            '',
+            'Ice cream topped with chocolate syrup, whipped cream and a maraschino cherry.',
             87, 80, 2, 8,
             '-39px', '-22px', '170%'),
         new Drink(

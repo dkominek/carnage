@@ -80,10 +80,10 @@ export class CharacterPageComponent implements OnInit {
 
             const lastIndex = this.characterService.characters.length - 1;
             while (index < 0) {
-                index = lastIndex + index;
+                index = lastIndex + index + 1;
             }
             while (index > lastIndex) {
-                index -= lastIndex;
+                index -= lastIndex + 1;
             }
             return this.characterService.characters[index];
         }

@@ -1,6 +1,7 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit} from '@angular/core';
 import {ButtonIconPosition, ToolbarService} from '../toolbar.service';
 import {Router, Event, NavigationStart} from '@angular/router';
+import {PlayerService} from "../player.service";
 
 @Component({
     selector: 'app-toolbar',
@@ -18,7 +19,7 @@ export class ToolbarComponent implements OnInit {
     chatVisible = false;
     splash = true;
 
-    constructor(public toolbarService: ToolbarService, private router: Router) {
+    constructor(public toolbarService: ToolbarService, private playerService: PlayerService, private router: Router) {
         router.events.subscribe((event: Event) => {
             if (event instanceof NavigationStart) {
                 this.splash = event.url === '/';
@@ -42,6 +43,15 @@ export class ToolbarComponent implements OnInit {
         this.callServerTimeoutHandle = setTimeout(() => {
             this.callServerActive = false;
         }, 10000);
+    }
+
+    reset() {
+        this.playerService.removePlayer(1);
+        this.playerService.removePlayer(2);
+        this.playerService.removePlayer(3);
+        this.playerService.removePlayer(4);
+        this.playerService.removePlayer(5);
+        this.router.navigate(['/']);
     }
 
     private calculateScroll(element) {

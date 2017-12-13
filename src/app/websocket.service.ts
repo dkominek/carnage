@@ -16,14 +16,25 @@ export class WebsocketService {
     }
 
     private create(url): Rx.Subject<MessageEvent> {
-        const ws = new WebSocket(url);
+        let ws = new WebSocket(url);
+
+        const bindWebsocket = (obs) => {
+            ws = new WebSocket(url);
+
+            ws.onmessage = obs.next.bind(obs);
+            ws.onerror = obs.error.bind(obs);
+            ws.onclose = () => {
+                ws = new WebSocket(url);
+                bindWebsocket(obs);
+            };
+        };
 
         const observable = Rx.Observable.create(
             (obs: Rx.Observer<MessageEvent>) => {
-                ws.onmessage = obs.next.bind(obs);
-                ws.onerror = obs.error.bind(obs);
-                ws.onclose = obs.complete.bind(obs);
-                return ws.close.bind(ws);
+                bindWebsocket(obs);
+                return () => {
+                    ws.close.bind(ws);
+                };
             });
         const observer = {
             next: (data: Object) => {

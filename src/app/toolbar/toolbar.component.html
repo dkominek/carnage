@@ -16,6 +16,9 @@
     </button>
   </div>
   <div class="secondary action">
+    <button class="ui button huge" (click)="reset()" title="Restart">
+      <i class="fa fa-refresh"></i>
+    </button>
     <ng-template ngFor let-button [ngForOf]="toolbarService.secondaryButtons">
       <button class="ui button huge" (click)="button.callback()" [disabled]="button.disabled" [title]="button.text">
         <i *ngIf="button.icon != null && button.iconPosition === buttonIconPosition.Left" class="fa fa-fw fa-{{button.icon}}"></i>

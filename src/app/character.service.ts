@@ -35,7 +35,7 @@ export class CharacterService {
             68, 52, 67, 79,
             '-12px', '10px', '140%'),
         new Entree(
-            'Philibert',
+            'Philbert',
             CharacterSubtype.CARNIVORE, 13.99,
             'Sliced sirloin, peppers, onions, mayo and provolone, on a hoagie roll.',
             23, 50, 78, 90,

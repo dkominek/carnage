@@ -37,7 +37,7 @@ export class CharacterService {
         new Entree(
             'Philbert',
             CharacterSubtype.CARNIVORE, 13.99,
-            'Sliced sirloin, peppers, onions, mayo and provolone, on a hoagie roll.',
+            'Sliced sirloin, peppers, onions, mayo and provolone, on a hoagie roll. Watch out for this Philly Gangster - he will sneak attack when you least expect it.',
             23, 50, 78, 90,
             '-2%', '0%', '130%'),
         new Appetizer(
@@ -73,7 +73,7 @@ export class CharacterService {
         new Dessert(
             'Ignace',
             CharacterSubtype.HERBIVORE, 6.99,
-            'Ice cream topped with chocolate syrup, whipped cream and a maraschino cherry.',
+            'Ice cream topped with chocolate syrup, whipped cream and a maraschino cherry. Although sweetened, this sundae will whip you into shape!',
             87, 80, 2, 8,
             '-15%', '-9%', '170%'),
         new Drink(

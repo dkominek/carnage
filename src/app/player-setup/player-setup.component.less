@@ -5,6 +5,11 @@
   height: 100%;
 }
 
+.ui.middle.aligned.grid {
+  height: ~"calc(100% - 140px)";
+  width: 100%;
+}
+
 .page-title {
   width: 100%;
   h1.ui.header {
@@ -13,6 +18,8 @@
 }
 
 .players-container {
+  padding-top: 70px;
+
   .ui.grid {
     width: 100%;
   }
@@ -100,7 +107,6 @@
 }
 
 @media only screen and (min-width: @computerBreakpoint) and (max-width: @largeMonitorBreakpoint) {
-
   .players-container {
     .player .name {
       font-size: 62px;
@@ -112,7 +118,6 @@
 }
 
 @media only screen and (min-width: @tabletBreakpoint) and (max-width: @computerBreakpoint) {
-
   .players-container {
     .player .name {
       font-size: 40px;
@@ -124,12 +129,7 @@
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-
   .players-container {
-    position: absolute;
-    top: 30%;
-    width: 100%;
-
     .player {
       min-width: 120px;
       min-height: 120px;

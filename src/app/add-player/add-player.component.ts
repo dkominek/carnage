@@ -41,6 +41,14 @@ export class AddPlayerComponent implements OnInit {
             disabled: this.addDisabled,
             type: ButtonType.Primary
         });
+        this.toolbarService.addButton({
+            text: 'Back',
+            icon: 'chevron-left',
+            callback: () => {
+                this.router.navigate(['/player', 'setup']);
+            },
+            type: ButtonType.Secondary
+        });
         this.playerService.unsetActivePlayer();
         this.route.params.subscribe((params) => {
             const playerIndex = +params['number'];

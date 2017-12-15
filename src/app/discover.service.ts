@@ -10,17 +10,15 @@ export class DiscoverService {
 
     private readonly googleApiKey = 'AIzaSyCeTDxR1qTz2RSk8oHOIt48I52O_Q0FTiA';
     public readonly videoIds = [
-        '8ywatBcHp2s',
-        'XQV2MLHFYFg',
-        '-jInzG9Ukrk',
-        '6hFb9mslQRc',
-        'lzmMnT7DB9I',
-        'mAolE6W_l9I',
-        'UgJLvtx5PzI',
-        'SPxjfQaxZhI',
-        'fWY6RbiNgVk',
-        'w14beXiD4Cg',
-        '4900jOY8cCM'
+        'E6Vh1gUO3k0',
+        '1CQSRsfqhR8',
+        'arNnodE-i1o',
+        '4t1t9Cbx9BY',
+        'CqVmUNWSsg0',
+        'DoPhvxavQho',
+        '7y8AmQNI7Dg',
+        'cnHvLcUC9mM',
+        'Oty9AF0E754'
     ];
     videos: DiscoverVideo[] = [];
 
